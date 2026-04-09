@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary SEO -->
+<title>Convertible — The Mac File Converter That Respects Your Privacy</title>
+<meta name="description" content="Convert images, video, audio, and PDFs on your Mac without uploading anything. MKV to MOV, HEIC to JPG, MP4 to GIF — all local, all private. One-time $9 purchase." />
+<meta name="keywords" content="mac file converter, convert mkv to mov mac, convert heic to jpg mac, compress pdf mac, webm to mp4 mac, mac video converter, permute alternative, handbrake alternative mac" />
+<meta name="author" content="Convertible" />
+<link rel="canonical" href="https://getconvertible.app" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://getconvertible.app" />
+<meta property="og:title" content="Convertible — The Mac File Converter That Respects Your Privacy" />
+<meta property="og:description" content="Convert images, video, audio, and PDFs on your Mac without uploading anything. All local, all private. $9 one-time." />
+<meta property="og:image" content="https://getconvertible.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Convertible" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Convertible — The Mac File Converter That Respects Your Privacy" />
+<meta name="twitter:description" content="Convert images, video, audio, and PDFs on your Mac without uploading anything. All local, all private. $9 one-time." />
+<meta name="twitter:image" content="https://getconvertible.app/og-image.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/convertible-logo.png" />
+<link rel="apple-touch-icon" href="/convertible-logo.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Convertible",
+  "operatingSystem": "macOS 14+",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.00",
+    "priceCurrency": "USD"
+  },
+  "description": "Privacy-first file converter for macOS. Convert images, video, audio, and PDFs locally without uploading anything.",
+  "url": "https://getconvertible.app"
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #F6F3EC;
+    --bg-alt: #EFEBE2;
+    --ink: #1A1A1E;
+    --ink-soft: #44444A;
+    --ink-muted: #7A7A82;
+    --accent: #E85D2F;
+    --accent-dark: #C94A22;
+    --gold: #D4A048;
+    --line: #D9D4C6;
+    --line-soft: #E5E0D0;
+    --card: #FDFBF4;
+    --card-border: #E2DCC9;
+    
+    --f-display: 'Fraunces', Georgia, serif;
+    --f-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151416;
+      --bg-alt: #1C1B1E;
+      --ink: #F2EFE5;
+      --ink-soft: #C8C4B8;
+      --ink-muted: #8B8780;
+      --accent: #FF6B3D;
+      --accent-dark: #E85D2F;
+      --gold: #E0B056;
+      --line: #2C2B2E;
+      --line-soft: #252427;
+      --card: #1E1D20;
+      --card-border: #2C2B2E;
+    }
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--f-body);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  /* Grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 243, 236, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(21, 20, 22, 0.85); }
+  }
+  
+  .nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--f-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(232, 93, 47, 0.18));
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--f-body);
+  }
+  
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  
+  .btn-accent {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(232, 93, 47, 0.25);
+  }
+  .btn-accent:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(232, 93, 47, 0.35);
+  }
+  
+  .btn-large {
+    padding: 14px 28px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 720px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
+  
+  /* ─── HERO ─── */
+  .hero {
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    font-family: var(--f-mono);
+  }
+  
+  .hero-logo {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    margin-bottom: 32px;
+    filter: drop-shadow(0 8px 24px rgba(232, 93, 47, 0.18));
+    animation: logoFloat 4s ease-in-out infinite;
+  }
+  
+  @keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  
+  .hero h1 {
+    font-family: var(--f-display);
+    font-size: clamp(44px, 7vw, 84px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 144;
+  }
+  
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+    font-variation-settings: "opsz" 144;
+  }
+  
+  .hero-sub {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--ink-soft);
+    max-width: 580px;
+    line-height: 1.55;
+    margin-bottom: 36px;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-family: var(--f-mono);
+    flex-wrap: wrap;
+  }
+  
+  .hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .hero-meta svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--gold);
+    stroke-width: 2.5;
+  }
+  
+  /* Hero visual — mock window */
+  .hero-visual {
+    margin-top: 72px;
+    position: relative;
+  }
+  
+  .mock-window {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.15), 0 0 0 0.5px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transform: perspective(1200px) rotateX(2deg);
+    transition: transform 0.4s ease;
+  }
+  
+  .mock-window:hover {
+    transform: perspective(1200px) rotateX(0deg);
+  }
+  
+  .mock-titlebar {
+    height: 42px;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+  }
+  
+  .mock-dots {
+    display: flex;
+    gap: 7px;
+  }
+  
+  .mock-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .mock-dot:nth-child(1) { background: #FF5F57; }
+  .mock-dot:nth-child(2) { background: #FDBB2E; }
+  .mock-dot:nth-child(3) { background: #27CA40; }
+  
+  .mock-title {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 500;
+    margin-right: 52px;
+  }
+  
+  .mock-body {
+    padding: 18px;
+  }
+  
+  .mock-presets {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .mock-presets::-webkit-scrollbar { display: none; }
+  
+  .mock-preset {
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    font-family: var(--f-body);
+  }
+  .mock-preset.active {
+    background: rgba(232, 93, 47, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .mock-preset em {
+    font-style: normal;
+    opacity: 0.6;
+    margin-left: 4px;
+    font-size: 10px;
+  }
+  
+  .mock-file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .mock-file:last-child { border-bottom: none; }
+  
+  .mock-file-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-alt);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  
+  .mock-file-info { flex: 1; min-width: 0; }
+  
+  .mock-file-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mock-file-meta {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+  
+  .mock-file-meta em {
+    font-style: normal;
+    color: var(--accent);
+    margin-left: 6px;
+  }
+  
+  .mock-format {
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+    font-family: var(--f-mono);
+  }
+  
+  .mock-convert {
+    margin-top: 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mock-convert-btn {
+    padding: 8px 32px;
+    background: #007AFF;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  /* ─── SECTION DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 80px 0 60px;
+  }
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .divider span {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  
+  /* ─── SECTIONS ─── */
+  section { padding: 60px 0; }
+  
+  .section-label {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  
+  .section-title {
+    font-family: var(--f-display);
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-variation-settings: "opsz" 144;
+  }
+  
+  .section-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  
+  .section-intro {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+  
+  /* ─── FEATURES GRID ─── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  .feature {
+    background: var(--card);
+    padding: 32px 28px;
+  }
+  
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-alt);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+  }
+  
+  .feature-title {
+    font-family: var(--f-display);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  
+  .feature-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 900px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* ─── FINDER EXTENSION SECTION ─── */
+  .finder-section {
+    padding: 100px 0;
+    background: var(--bg-alt);
+  }
+  
+  .finder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  
+  .finder-copy .section-intro {
+    margin-bottom: 28px;
+  }
+  
+  .finder-bullets {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
+  }
+  
+  .finder-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  
+  .finder-bullets svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .finder-mockup {
+    position: relative;
+    padding: 40px 20px;
+  }
+  
+  .finder-file-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  
+  .finder-file-icon {
+    font-size: 64px;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+  }
+  
+  .finder-filename {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 2px 8px;
+    background: rgba(0, 122, 255, 0.1);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 122, 255, 0.2);
+  }
+  
+  .finder-context-menu {
+    position: relative;
+    width: 220px;
+    margin: 12px auto 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 5px 0;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 0.5px rgba(0,0,0,0.05);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .finder-context-menu {
+      background: rgba(42, 42, 44, 0.95);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+  }
+  
+  .finder-menu-item {
+    padding: 4px 14px;
+    color: #1a1a1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .finder-menu-item { color: #f2efe5; }
+  }
+  
+  .finder-menu-item span:last-child:not(:only-child) {
+    font-size: 10px;
+    opacity: 0.5;
+  }
+  
+  .finder-menu-highlight {
+    background: #E85D2F;
+    color: #fff !important;
+    margin: 0 4px;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+  
+  .finder-menu-highlight span { color: #fff !important; opacity: 1 !important; }
+  
+  .finder-menu-sep {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 4px 8px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .finder-menu-sep { background: rgba(255, 255, 255, 0.12); }
+  }
+  
+  /* Submenu positioned to the right of "Convert to" */
+  .finder-submenu {
+    position: absolute;
+    left: calc(100% + 4px);
+    top: 130px;
+    width: 180px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 5px 0;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 0.5px rgba(0,0,0,0.05);
+    animation: submenuSlide 0.4s ease 0.6s both;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .finder-submenu {
+      background: rgba(42, 42, 44, 0.95);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+  }
+  
+  @keyframes submenuSlide {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .finder-submenu-label {
+    padding: 4px 14px 2px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a7a82;
+  }
+  
+  .finder-submenu-lock {
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 900px) {
+    .finder-grid { grid-template-columns: 1fr; gap: 48px; }
+    .finder-mockup { padding: 20px; }
+  }
+  
+  @media (max-width: 500px) {
+    .finder-submenu {
+      position: relative;
+      left: auto;
+      top: auto;
+      margin-top: 8px;
+      width: 100%;
+    }
+  }
+  
+  /* ─── FORMAT MATRIX ─── */
+  .matrix-wrap {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 40px;
+    margin-top: 32px;
+  }
+  
+  .matrix-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  
+  .matrix-cat-label {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  
+  .matrix-formats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .matrix-format {
+    padding: 5px 11px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  
+  @media (max-width: 800px) {
+    .matrix-categories { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .matrix-wrap { padding: 28px; }
+  }
+  
+  /* ─── COMPARISON ─── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  .compare-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+  }
+  
+  .compare-card.featured {
+    background: #1A1A1E;
+    color: #F6F3EC;
+    border-color: #1A1A1E;
+  }
+  
+  .compare-card.featured .compare-title {
+    color: #E0B056;
+  }
+  
+  .compare-title {
+    font-family: var(--f-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .compare-sub {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+    font-family: var(--f-mono);
+  }
+  .compare-card.featured .compare-sub { color: rgba(246, 243, 236, 0.6); }
+  
+  .compare-list {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  
+  .compare-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: var(--ink-soft);
+    padding: 3px 0;
+  }
+  .compare-card.featured .compare-list li { color: rgba(246, 243, 236, 0.92); }
+  
+  .compare-list svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  
+  .check { stroke: #34C759; }
+  .cross { stroke: #FF5F57; }
+  .compare-card.featured .check { stroke: var(--gold); }
+  
+  @media (max-width: 800px) {
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* ─── PRICING ─── */
+  .pricing {
+    background: var(--bg-alt);
+    padding: 100px 0;
+    margin-top: 40px;
+  }
+  
+  .pricing-card {
+    max-width: 480px;
+    margin: 48px auto 0;
+    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: 16px;
+    padding: 44px 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.15);
+  }
+  
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
+  .pricing-name {
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-style: italic;
+    color: var(--accent);
+  }
+  
+  .pricing-price {
+    font-family: var(--f-display);
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ink);
+    margin: 20px 0 6px;
+    font-variation-settings: "opsz" 144;
+  }
+  
+  .pricing-price sup {
+    font-size: 28px;
+    font-weight: 500;
+    vertical-align: top;
+    margin-right: 2px;
+    color: var(--ink-muted);
+  }
+  
+  .pricing-note {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-family: var(--f-mono);
+    margin-bottom: 28px;
+  }
+  
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+    margin: 28px 0 32px;
+    padding: 0;
+  }
+  
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  
+  .pricing-features svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--accent);
+    flex-shrink: 0;
+  }
+  
+  /* ─── FAQ ─── */
+  .faq-list {
+    max-width: 720px;
+    margin-top: 32px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  
+  .faq-q {
+    font-family: var(--f-display);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: -0.01em;
+    list-style: none;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  
+  .faq-q::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    transition: transform 0.25s;
+  }
+  
+  details[open] .faq-q::after {
+    content: '−';
+  }
+  
+  .faq-a {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  
+  .faq-a a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  
+  /* ─── PRIVACY STRIP ─── */
+  .privacy-strip {
+    background: #1A1A1E;
+    color: #F6F3EC;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .privacy-strip h2 {
+    font-family: var(--f-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    color: #F6F3EC;
+  }
+  
+  .privacy-strip h2 em {
+    font-style: italic;
+    color: #E0B056;
+    font-weight: 500;
+  }
+  
+  .privacy-strip p {
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: rgba(246, 243, 236, 0.78);
+    line-height: 1.6;
+  }
+  
+  .privacy-icons {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 44px;
+    flex-wrap: wrap;
+  }
+  
+  .privacy-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .privacy-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid #E0B056;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E0B056;
+  }
+  
+  .privacy-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: #E0B056;
+    stroke-width: 2;
+    fill: none;
+  }
+  
+  .privacy-icon span {
+    font-size: 12px;
+    font-family: var(--f-mono);
+    color: rgba(246, 243, 236, 0.88);
+    font-weight: 500;
+  }
+  
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--bg);
+    padding: 48px 0 40px;
+    border-top: 1px solid var(--line);
+  }
+  
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  
+  .footer-links a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: var(--f-mono);
+  }
+  .footer-links a:hover { color: var(--ink); }
+  
+  .footer-copy {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: var(--f-mono);
+  }
+  
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero-logo { animation: fadeUp 0.6s ease both, logoFloat 4s ease-in-out 0.6s infinite; }
+  .hero-badge { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero h1 { animation: fadeUp 0.7s ease 0.2s both; }
+  .hero-sub { animation: fadeUp 0.7s ease 0.35s both; }
+  .hero-cta { animation: fadeUp 0.7s ease 0.5s both; }
+  .hero-meta { animation: fadeUp 0.7s ease 0.65s both; }
+  .hero-visual { animation: fadeUp 0.8s ease 0.8s both; }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="/convertible-logo.png" alt="Convertible" class="logo-mark" />
+      Convertible
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#finder">Finder</a>
+      <a href="#formats">Formats</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download" class="btn btn-primary">Download</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="container">
+    <img src="/convertible-logo.png" alt="Convertible" class="hero-logo" />
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Privacy-first · Available for macOS 14+
+    </div>
+    <h1>Convert files<br/>without <em>handing them over.</em></h1>
+    <p class="hero-sub">
+      The Mac file converter that never uploads anything. Images, video, audio, PDFs — all converted locally, all instantly, all private. Built for people who'd rather not send their files to a stranger's server.
+    </p>
+    <div class="hero-cta">
+      <a href="#download" class="btn btn-accent btn-large">
+        Download for Mac · $9
+      </a>
+      <a href="#features" class="btn btn-large" style="background: transparent; color: var(--ink); border: 1px solid var(--line);">
+        See how it works
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        One-time purchase
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Free tier included
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No subscription
+      </span>
+    </div>
+    
+    <!-- Mock window visual -->
+    <div class="hero-visual">
+      <div class="mock-window">
+        <div class="mock-titlebar">
+          <div class="mock-dots">
+            <div class="mock-dot"></div>
+            <div class="mock-dot"></div>
+            <div class="mock-dot"></div>
+          </div>
+          <div class="mock-title">Convertible</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-presets">
+            <div class="mock-preset">Original</div>
+            <div class="mock-preset active">Email <em>≤25 MB</em></div>
+            <div class="mock-preset">iMessage <em>≤100 MB</em></div>
+            <div class="mock-preset">Discord <em>≤10 MB</em></div>
+            <div class="mock-preset">WhatsApp <em>≤16 MB</em></div>
+          </div>
+          <div class="mock-file">
+            <div class="mock-file-icon">🎬</div>
+            <div class="mock-file-info">
+              <div class="mock-file-name">vacation-footage.mkv</div>
+              <div class="mock-file-meta">842 MB <em>→ ≤25 MB</em></div>
+            </div>
+            <div class="mock-format">MP4 ▾</div>
+          </div>
+          <div class="mock-file">
+            <div class="mock-file-icon">🌅</div>
+            <div class="mock-file-info">
+              <div class="mock-file-name">sunset-photo.heic</div>
+              <div class="mock-file-meta">4.2 MB</div>
+            </div>
+            <div class="mock-format">JPEG ▾</div>
+          </div>
+          <div class="mock-file">
+            <div class="mock-file-icon">📄</div>
+            <div class="mock-file-info">
+              <div class="mock-file-name">annual-report.pdf</div>
+              <div class="mock-file-meta">38 MB <em>→ ≤25 MB</em></div>
+            </div>
+            <div class="mock-format">PDF ▾</div>
+          </div>
+          <div class="mock-convert">
+            <div class="mock-convert-btn">Convert All</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── FEATURES ─── -->
+<section id="features">
+  <div class="container">
+    <div class="section-label">Why Convertible</div>
+    <h2 class="section-title">Built for the moments<br/>when <em>seconds matter.</em></h2>
+    <p class="section-intro">
+      You dropped a 40 MB screen recording into Slack and got "file too large." You need to email a PDF that's just over the limit. You're trying to open an MKV in QuickTime. Convertible handles all of these in seconds — locally, without uploading.
+    </p>
+    
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3 class="feature-title">Fit-to-target presets</h3>
+        <p class="feature-desc">
+          One click to fit files under Email (25 MB), Discord (10 MB), iMessage (100 MB), or WhatsApp (16 MB). No guessing at bitrates or dimensions.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Instant stream copy</h3>
+        <p class="feature-desc">
+          MKV to MOV, MP4 to MOV — when codecs match, Convertible just rewraps the container. A 10 GB file converts in seconds with zero quality loss.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">Everything stays local</h3>
+        <p class="feature-desc">
+          Your files never leave your Mac. No cloud uploads, no telemetry, no tracking. The app works completely offline.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">⚙️</div>
+        <h3 class="feature-title">Hardware accelerated</h3>
+        <p class="feature-desc">
+          Uses Apple's VideoToolbox and sips for native performance. Conversions fly on Apple Silicon — no beachball, no CPU meltdown.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🎨</div>
+        <h3 class="feature-title">Compress without converting</h3>
+        <p class="feature-desc">
+          Have a 35 MB PDF for email? Shrink it to 10 MB while keeping it a PDF. Same for video, audio, and images.
+        </p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🧩</div>
+        <h3 class="feature-title">Formats Apple forgot</h3>
+        <p class="feature-desc">
+          MKV, WebM, FLAC, OGG — the formats QuickTime refuses to touch. Convertible handles them all without bloat.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINDER EXTENSION HIGHLIGHT ─── -->
+<section id="finder" class="finder-section">
+  <div class="container">
+    <div class="finder-grid">
+      <div class="finder-copy">
+        <div class="section-label">Finder Integration</div>
+        <h2 class="section-title">Right-click.<br/><em>Done.</em></h2>
+        <p class="section-intro">
+          The fastest conversion is the one you never opened an app for. Convertible adds "Convert to" directly to your Finder right-click menu. Pick any file, pick a format, and it converts in place — no window, no drag-and-drop, no clicks wasted.
+        </p>
+        <ul class="finder-bullets">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
+            <span>Works on any file, anywhere in Finder</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
+            <span>Select multiple files for batch conversion</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
+            <span>Converts in the background without blocking Finder</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
+            <span>Notification when done, output saved next to original</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="finder-mockup">
+        <div class="finder-file-preview">
+          <div class="finder-file-icon">🎬</div>
+          <div class="finder-filename">vacation-footage.mkv</div>
+        </div>
+        <div class="finder-context-menu">
+          <div class="finder-menu-item">Open</div>
+          <div class="finder-menu-item">Open With <span>▸</span></div>
+          <div class="finder-menu-sep"></div>
+          <div class="finder-menu-item">Move to Trash</div>
+          <div class="finder-menu-item">Get Info</div>
+          <div class="finder-menu-sep"></div>
+          <div class="finder-menu-item finder-menu-highlight">
+            <span>Convert to</span>
+            <span>▸</span>
+          </div>
+          <div class="finder-menu-sep"></div>
+          <div class="finder-menu-item">Share...</div>
+          <div class="finder-menu-item">Copy</div>
+          
+          <!-- Submenu -->
+          <div class="finder-submenu">
+            <div class="finder-menu-item">MP4</div>
+            <div class="finder-menu-item">MOV (QuickTime)</div>
+            <div class="finder-menu-item">WebM</div>
+            <div class="finder-menu-sep"></div>
+            <div class="finder-submenu-label">Pro Features</div>
+            <div class="finder-menu-item">
+              <span>Extract Audio</span>
+              <span class="finder-submenu-lock">🔒</span>
+            </div>
+            <div class="finder-menu-item">
+              <span>GIF</span>
+              <span class="finder-submenu-lock">🔒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FORMATS ─── -->
+<section id="formats" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-label">Supported Formats</div>
+    <h2 class="section-title">Every format you need,<br/><em>nothing you don't.</em></h2>
+    <p class="section-intro">
+      Convertible handles the formats people actually use — the ones you get from phones, cameras, the web, and your coworkers. Convert any input to any valid output.
+    </p>
+    
+    <div class="matrix-wrap">
+      <div class="matrix-categories">
+        <div>
+          <div class="matrix-cat-label">Images</div>
+          <div class="matrix-formats">
+            <div class="matrix-format">PNG</div>
+            <div class="matrix-format">JPG</div>
+            <div class="matrix-format">HEIC</div>
+            <div class="matrix-format">WebP</div>
+            <div class="matrix-format">TIFF</div>
+            <div class="matrix-format">BMP</div>
+            <div class="matrix-format">GIF</div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="matrix-cat-label">Video</div>
+          <div class="matrix-formats">
+            <div class="matrix-format">MP4</div>
+            <div class="matrix-format">MOV</div>
+            <div class="matrix-format">MKV</div>
+            <div class="matrix-format">WebM</div>
+            <div class="matrix-format">M4V</div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="matrix-cat-label">Audio</div>
+          <div class="matrix-formats">
+            <div class="matrix-format">MP3</div>
+            <div class="matrix-format">AAC</div>
+            <div class="matrix-format">M4A</div>
+            <div class="matrix-format">WAV</div>
+            <div class="matrix-format">FLAC</div>
+            <div class="matrix-format">OGG</div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="matrix-cat-label">Documents</div>
+          <div class="matrix-formats">
+            <div class="matrix-format">PDF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON ─── -->
+<section>
+  <div class="container">
+    <div class="section-label">Compared to the alternatives</div>
+    <h2 class="section-title">Faster than online tools.<br/>Simpler than <em>everything else.</em></h2>
+    
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-title">Online converters</div>
+        <div class="compare-sub">CloudConvert, FreeConvert, etc.</div>
+        <ul class="compare-list">
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Uploads your files to a server</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>File size limits, slow uploads</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Unclear data retention</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Subscriptions or paywalls</li>
+        </ul>
+      </div>
+      
+      <div class="compare-card featured">
+        <div class="compare-title" style="color: var(--gold);">Convertible</div>
+        <div class="compare-sub">Native macOS · Local · $9</div>
+        <ul class="compare-list">
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>100% local conversion</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Handles files of any size</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets built in</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>One-time $9 purchase</li>
+        </ul>
+      </div>
+      
+      <div class="compare-card">
+        <div class="compare-title">Other Mac apps</div>
+        <div class="compare-sub">HandBrake, Permute, etc.</div>
+        <ul class="compare-list">
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Overwhelming options & presets</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>No Finder integration</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>No fit-to-limit presets</li>
+          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>More expensive ($15+)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Pay once.<br/><em>Keep it forever.</em></h2>
+      <p class="section-intro" style="margin-left: auto; margin-right: auto;">
+        No subscriptions. No tiers. No "starter plans." One price, full features, yours forever — including all future updates.
+      </p>
+    </div>
+    
+    <div class="pricing-card" id="download">
+      <div class="pricing-badge">Launch Price</div>
+      <div class="pricing-name">Convertible Pro</div>
+      <div class="pricing-price"><sup>$</sup>9</div>
+      <div class="pricing-note">one-time · all future updates included</div>
+      
+      <ul class="pricing-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited image conversions (free tier)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited video & audio conversions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited PDF compression</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Batch Finder conversion</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>All future formats included</li>
+      </ul>
+      
+      <a href="#" class="btn btn-accent btn-large" style="width: 100%; justify-content: center;">
+        Download for Mac
+      </a>
+      
+      <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px; font-family: var(--f-mono);">
+        Try the free tier first. Upgrade when you need more.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRIVACY STRIP ─── -->
+<section class="privacy-strip">
+  <div class="container">
+    <h2>Your files <em>stay yours.</em><br/>Always.</h2>
+    <p>
+      Every conversion happens on your Mac. No cloud uploads, no telemetry, no analytics SDKs. Crash reports come through Apple's privacy-respecting system only if you've opted in at the OS level.
+    </p>
+    
+    <div class="privacy-icons">
+      <div class="privacy-icon">
+        <div class="privacy-icon-circle">
+          <svg viewBox="0 0 24 24"><path d="M12 2L4 7v6c0 5 3.5 9.5 8 11c4.5-1.5 8-6 8-11V7l-8-5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>100% local</span>
+      </div>
+      <div class="privacy-icon">
+        <div class="privacy-icon-circle">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Zero tracking</span>
+      </div>
+      <div class="privacy-icon">
+        <div class="privacy-icon-circle">
+          <svg viewBox="0 0 24 24"><path d="M18.364 5.636L5.636 18.364m12.728 0L5.636 5.636" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>No cloud</span>
+      </div>
+      <div class="privacy-icon">
+        <div class="privacy-icon-circle">
+          <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Works offline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Answers to the<br/><em>questions you'll ask.</em></h2>
+    
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-q">How is this different from macOS Quick Actions?</summary>
+        <div class="faq-a">
+          macOS has a built-in "Convert Image" Quick Action that handles PNG, JPG, and HEIC. Convertible does much more: video formats (MKV, WebM, MP4, MOV), audio (MP3, FLAC, etc.), PDF compression, fit-to-target size presets, and batch processing. Plus a Finder extension that works everywhere.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">Is it really a one-time purchase?</summary>
+        <div class="faq-a">
+          Yes. $9 once, yours forever. All future updates and new formats are included. No subscription, no "Pro" tier upgrade, no "pay to unlock" when the next major version ships.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">What's the difference between the free tier and Pro?</summary>
+        <div class="faq-a">
+          The free tier includes unlimited image conversions, all resize presets, and the Finder extension for images — forever, no limits. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 media conversions and 5 PDF conversions per month as a taste.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">Can I really convert MKV files?</summary>
+        <div class="faq-a">
+          Yes — this is one of the main reasons people buy Convertible. macOS can't open MKV natively (QuickTime, iMovie, Final Cut don't support it). Convertible converts MKV to MOV or MP4 instantly when the video inside uses common codecs like H.264 or H.265, with zero quality loss.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">Does it work offline?</summary>
+        <div class="faq-a">
+          Completely. The only network call Convertible ever makes is when you purchase through Apple's App Store. After that, disconnect your Mac from the internet and everything still works.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">What macOS versions are supported?</summary>
+        <div class="faq-a">
+          Convertible requires macOS 14 (Sonoma) or later. It runs natively on both Apple Silicon and Intel Macs.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">Can I request a new format?</summary>
+        <div class="faq-a">
+          Absolutely. Email <a href="/cdn-cgi/l/email-protection#edb688808c8481cd9d9f8299888e998889b0">[email protected]</a> with your use case. Future formats are included in your purchase — if I add it, you get it.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-q">Is my data sold or tracked?</summary>
+        <div class="faq-a">
+          Never. Convertible has no analytics SDKs, no telemetry, and no third-party tracking. Crash reports only come through Apple's MetricKit system, and only if you've explicitly opted in at the OS level. Your files stay on your Mac.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 Convertible · Made with care for your Mac
+      </div>
+      <ul class="footer-links">
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#8ad1efe7ebe3e6aafaf8e5feefe9feefeed7">Support</a></li>
+        <li><a href="https://twitter.com/convertibleapp" rel="noopen
