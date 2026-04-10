@@ -202,6 +202,31 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   }
+
+  /* Nav-specific styling to keep the Download button compact and readable */
+  .nav-inner .btn-primary {
+    background: transparent;
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-inner .btn-primary {
+      background: rgba(255,255,255,0.04);
+      color: var(--ink);
+      border-color: rgba(255,255,255,0.06);
+    }
+  }
+
+  .nav-inner .btn-primary:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(232,93,47,0.18);
+  }
   
   .btn-accent {
     background: var(--accent);
@@ -245,19 +270,18 @@
     margin-bottom: 28px;
     font-family: var(--f-mono);
   }
-  
-  .hero-logo {
-    width: 88px;
-    height: 88px;
-    object-fit: contain;
-    margin-bottom: 32px;
-    filter: drop-shadow(0 8px 24px rgba(232, 93, 47, 0.18));
-    animation: logoFloat 4s ease-in-out infinite;
+
+  /* Hero badge row */
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
   }
-  
-  @keyframes logoFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+
+  @media (max-width: 720px) {
+    .hero-top { flex-direction: column; align-items: center; gap: 8px; }
+    .hero-badge { margin-bottom: 0; }
   }
   
   .hero-badge .dot {
@@ -1163,8 +1187,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
   
-  .hero-logo { animation: fadeUp 0.6s ease both, logoFloat 4s ease-in-out 0.6s infinite; }
-  .hero-badge { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-badge { animation: fadeUp 0.6s ease both; }
   .hero h1 { animation: fadeUp 0.7s ease 0.2s both; }
   .hero-sub { animation: fadeUp 0.7s ease 0.35s both; }
   .hero-cta { animation: fadeUp 0.7s ease 0.5s both; }
@@ -1195,10 +1218,11 @@
 <!-- ─── HERO ─── -->
 <header class="hero">
   <div class="container">
-    <img src="/convertible-logo.png" alt="Convertible" class="hero-logo" />
-    <div class="hero-badge">
-      <span class="dot"></span>
-      Privacy-first · Available for macOS 14+
+    <div class="hero-top">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Privacy-first · Available for macOS 14+
+      </div>
     </div>
     <h1>Convert files<br/>without <em>handing them over.</em></h1>
     <p class="hero-sub">
@@ -1245,6 +1269,8 @@
             <div class="mock-preset">iMessage <em>≤100 MB</em></div>
             <div class="mock-preset">Discord <em>≤10 MB</em></div>
             <div class="mock-preset">WhatsApp <em>≤16 MB</em></div>
+            <div class="mock-preset">Web <em>≤2 MB</em></div>
+            <div class="mock-preset">Custom</div>
           </div>
           <div class="mock-file">
             <div class="mock-file-icon">🎬</div>
@@ -1317,7 +1343,7 @@
         <div class="feature-icon">⚙️</div>
         <h3 class="feature-title">Hardware accelerated</h3>
         <p class="feature-desc">
-          Uses Apple's VideoToolbox and sips for native performance. Conversions fly on Apple Silicon — no beachball, no CPU meltdown.
+          Uses Apple VideoToolbox (H.264 + HEVC) and sips for native encode/decode. Video compression adapts bitrate iteratively to hit your exact target size — fast on Apple Silicon, no beachball on Intel.
         </p>
       </div>
       
@@ -1325,7 +1351,7 @@
         <div class="feature-icon">🎨</div>
         <h3 class="feature-title">Compress without converting</h3>
         <p class="feature-desc">
-          Have a 35 MB PDF for email? Shrink it to 10 MB while keeping it a PDF. Same for video, audio, and images.
+          Have a 35 MB PDF for email? Shrink it to 10 MB while keeping it a PDF — output is never larger than the original. Convertible rates severity (Minimal → Significant) so you know what to expect before committing.
         </p>
       </div>
       
@@ -1348,7 +1374,7 @@
         <div class="section-label">Finder Integration</div>
         <h2 class="section-title">Right-click.<br/><em>Done.</em></h2>
         <p class="section-intro">
-          The fastest conversion is the one you never opened an app for. Convertible adds "Convert to" directly to your Finder right-click menu. Pick any file, pick a format, and it converts in place — no window, no drag-and-drop, no clicks wasted.
+          The fastest conversion is the one you never opened an app for. Convertible adds "Convert to" directly to your Finder right-click menu, and lives in your menu bar for instant access anytime. Pick any file, pick a format, and it converts in the background — no window, no drag-and-drop, no clicks wasted.
         </p>
         <ul class="finder-bullets">
           <li>
@@ -1357,7 +1383,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Select multiple files for batch conversion</span>
+            <span>Batch convert multiple files at once (Pro)</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
@@ -1365,7 +1391,11 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Notification when done, output saved next to original</span>
+            <span>Notification when done, output saved next to original — originals never overwritten</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
+            <span>Menu bar icon: recent conversions, usage counter, and quick upgrade access — always one click away</span>
           </li>
         </ul>
       </div>
@@ -1392,17 +1422,15 @@
           
           <!-- Submenu -->
           <div class="finder-submenu">
+            <div class="finder-submenu-label">3 free conversions/month</div>
             <div class="finder-menu-item">MP4</div>
             <div class="finder-menu-item">MOV (QuickTime)</div>
             <div class="finder-menu-item">WebM</div>
+            <div class="finder-menu-item">Extract Audio</div>
             <div class="finder-menu-sep"></div>
-            <div class="finder-submenu-label">Pro Features</div>
+            <div class="finder-submenu-label">Pro Only</div>
             <div class="finder-menu-item">
-              <span>Extract Audio</span>
-              <span class="finder-submenu-lock">🔒</span>
-            </div>
-            <div class="finder-menu-item">
-              <span>GIF</span>
+              <span>Batch Convert</span>
               <span class="finder-submenu-lock">🔒</span>
             </div>
           </div>
@@ -1467,6 +1495,9 @@
         </div>
       </div>
     </div>
+    <p style="margin-top: 20px; font-size: 13px; color: var(--ink-muted); font-family: var(--f-mono);">
+      Also: extract audio from any video file → MP3, AAC, WAV, or FLAC. Convert any image format → PDF, or export PDF pages → PNG, JPG, or TIFF (one file per page).
+    </p>
   </div>
 </section>
 
@@ -1520,7 +1551,7 @@
       <div class="section-label">Pricing</div>
       <h2 class="section-title">Pay once.<br/><em>Keep it forever.</em></h2>
       <p class="section-intro" style="margin-left: auto; margin-right: auto;">
-        No subscriptions. No tiers. No "starter plans." One price, full features, yours forever — including all future updates.
+        No subscription. No renewal fees. One price, all features, yours forever — including all future formats.
       </p>
     </div>
     
@@ -1533,7 +1564,7 @@
       <ul class="pricing-features">
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited image conversions (free tier)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited video & audio conversions</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited PDF compression</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited PDF conversions (convert &amp; compress)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Batch Finder conversion</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>All future formats included</li>
@@ -1611,7 +1642,7 @@
       <details class="faq-item">
         <summary class="faq-q">What's the difference between the free tier and Pro?</summary>
         <div class="faq-a">
-          The free tier includes unlimited image conversions, all resize presets, and the Finder extension for images — forever, no limits. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 media conversions and 5 PDF conversions per month as a taste.
+          The free tier includes unlimited image conversions, all compression presets, and single-file Finder extension for images — forever, no expiry. Batch conversion in the Finder extension is Pro-only. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 video/audio conversions and 5 PDF conversions per month as a taste.
         </div>
       </details>
       
@@ -1639,7 +1670,7 @@
       <details class="faq-item">
         <summary class="faq-q">Can I request a new format?</summary>
         <div class="faq-a">
-          Absolutely. Email <a href="/cdn-cgi/l/email-protection#edb688808c8481cd9d9f8299888e998889b0">[email protected]</a> with your use case. Future formats are included in your purchase — if I add it, you get it.
+          Absolutely. Email <a href="mailto:hello@getconvertible.app">hello@getconvertible.app</a> with your use case. Future formats are included in your purchase — if I add it, you get it.
         </div>
       </details>
       
@@ -1661,7 +1692,6 @@
         © 2026 Convertible · Made with care for your Mac
       </div>
       <ul class="footer-links">
-        <li><a href="/privacy">Privacy</a></li>
-        <li><a href="/terms">Terms</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#8ad1efe7ebe3e6aafaf8e5feefe9feefeed7">Support</a></li>
-        <li><a href="https://twitter.com/convertibleapp" rel="noopen
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+          <li><a href="/support.html">Support</a></li>
