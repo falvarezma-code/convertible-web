@@ -628,192 +628,6 @@
     .features-grid { grid-template-columns: 1fr; }
   }
   
-  /* ─── FINDER EXTENSION SECTION ─── */
-  .finder-section {
-    padding: 100px 0;
-    background: var(--bg-alt);
-  }
-  
-  .finder-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  
-  .finder-copy .section-intro {
-    margin-bottom: 28px;
-  }
-  
-  .finder-bullets {
-    list-style: none;
-    padding: 0;
-    margin-top: 24px;
-  }
-  
-  .finder-bullets li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.5;
-  }
-  
-  .finder-bullets svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--accent);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  
-  .finder-mockup {
-    position: relative;
-    padding: 40px 20px;
-  }
-  
-  .finder-file-preview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4px;
-  }
-  
-  .finder-file-icon {
-    font-size: 64px;
-    margin-bottom: 6px;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
-  }
-  
-  .finder-filename {
-    font-family: var(--f-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    padding: 2px 8px;
-    background: rgba(0, 122, 255, 0.1);
-    border-radius: 4px;
-    border: 1px solid rgba(0, 122, 255, 0.2);
-  }
-  
-  .finder-context-menu {
-    position: relative;
-    width: 220px;
-    margin: 12px auto 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    padding: 5px 0;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 0.5px rgba(0,0,0,0.05);
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 13px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .finder-context-menu {
-      background: rgba(42, 42, 44, 0.95);
-      border-color: rgba(255, 255, 255, 0.12);
-    }
-  }
-  
-  .finder-menu-item {
-    padding: 4px 14px;
-    color: #1a1a1e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: default;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .finder-menu-item { color: #f2efe5; }
-  }
-  
-  .finder-menu-item span:last-child:not(:only-child) {
-    font-size: 10px;
-    opacity: 0.5;
-  }
-  
-  .finder-menu-highlight {
-    background: #E85D2F;
-    color: #fff !important;
-    margin: 0 4px;
-    border-radius: 5px;
-    padding: 4px 10px;
-    font-weight: 500;
-  }
-  
-  .finder-menu-highlight span { color: #fff !important; opacity: 1 !important; }
-  
-  .finder-menu-sep {
-    height: 1px;
-    background: rgba(0, 0, 0, 0.1);
-    margin: 4px 8px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .finder-menu-sep { background: rgba(255, 255, 255, 0.12); }
-  }
-  
-  /* Submenu positioned to the right of "Convert to" */
-  .finder-submenu {
-    position: absolute;
-    left: calc(100% + 4px);
-    top: 130px;
-    width: 180px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    padding: 5px 0;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 0.5px rgba(0,0,0,0.05);
-    animation: submenuSlide 0.4s ease 0.6s both;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .finder-submenu {
-      background: rgba(42, 42, 44, 0.95);
-      border-color: rgba(255, 255, 255, 0.12);
-    }
-  }
-  
-  @keyframes submenuSlide {
-    from { opacity: 0; transform: translateX(-8px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  
-  .finder-submenu-label {
-    padding: 4px 14px 2px;
-    font-size: 9.5px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #7a7a82;
-  }
-  
-  .finder-submenu-lock {
-    opacity: 0.5;
-  }
-  
-  @media (max-width: 900px) {
-    .finder-grid { grid-template-columns: 1fr; gap: 48px; }
-    .finder-mockup { padding: 20px; }
-  }
-  
-  @media (max-width: 500px) {
-    .finder-submenu {
-      position: relative;
-      left: auto;
-      top: auto;
-      margin-top: 8px;
-      width: 100%;
-    }
-  }
-  
   /* ─── FORMAT MATRIX ─── */
   .matrix-wrap {
     background: var(--card);
@@ -1243,7 +1057,6 @@
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
-      <a href="#finder">Finder</a>
       <a href="#formats">Formats</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -1361,13 +1174,13 @@
       </div>
       
       <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <h3 class="feature-title">Instant stream copy</h3>
+        <div class="feature-icon">✨</div>
+        <h3 class="feature-title">Drag from anywhere</h3>
         <p class="feature-desc">
-          MKV to MOV, MP4 to MOV: when codecs match, Convertible just rewraps the container. A 10 GB file converts in seconds with zero quality loss.
+          Works with files from Finder, Safari downloads, email attachments, or Messages. If you can drag it, Convertible can convert it.
         </p>
       </div>
-      
+
       <div class="feature">
         <div class="feature-icon">🔒</div>
         <h3 class="feature-title">Everything stays local</h3>
@@ -1375,12 +1188,12 @@
           Your files never leave your Mac. No cloud uploads, no telemetry, no tracking. The app works completely offline.
         </p>
       </div>
-      
+
       <div class="feature">
-        <div class="feature-icon">⚙️</div>
-        <h3 class="feature-title">Hardware accelerated</h3>
+        <div class="feature-icon">☰</div>
+        <h3 class="feature-title">Lives in your menu bar</h3>
         <p class="feature-desc">
-          Uses Apple VideoToolbox (H.264 + HEVC) and sips for native encode/decode. Video compression adapts bitrate iteratively to hit your exact target size. Fast on Apple Silicon, no beachball on Intel.
+          Always one click away. See recent conversions, quick-convert the clipboard, and access settings from any app.
         </p>
       </div>
       
@@ -1407,80 +1220,6 @@
           <p class="feature-desc">
             Pull the audio track from any video as MP3, AAC, WAV, or FLAC. Perfect for feeding recordings into local transcription tools like Whisper. Since everything runs on-device, your audio never touches a server. No upload, no account, no trace.
           </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── FINDER EXTENSION HIGHLIGHT ─── -->
-<section id="finder" class="finder-section">
-  <div class="container">
-    <div class="finder-grid">
-      <div class="finder-copy">
-        <div class="section-label">Finder Integration</div>
-        <h2 class="section-title">Right-click.<br/><em>Done.</em></h2>
-        <p class="section-intro">
-          The fastest conversion is the one you never opened an app for. Convertible adds "Convert to" directly to your Finder right-click menu, and lives in your menu bar for instant access anytime. Pick any file, pick a format, and it converts in the background. No window, no drag-and-drop, no clicks wasted.
-        </p>
-        <ul class="finder-bullets">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Works on any file, anywhere in Finder</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Batch convert multiple files at once (Pro)</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Converts in the background without blocking Finder</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Notification when done, output saved next to original. Originals never overwritten.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>
-            <span>Menu bar icon: recent conversions, usage counter, and quick upgrade access, always one click away</span>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="finder-mockup">
-        <div class="finder-file-preview">
-          <div class="finder-file-icon">🎬</div>
-          <div class="finder-filename">vacation-footage.mkv</div>
-        </div>
-        <div class="finder-context-menu">
-          <div class="finder-menu-item">Open</div>
-          <div class="finder-menu-item">Open With <span>▸</span></div>
-          <div class="finder-menu-sep"></div>
-          <div class="finder-menu-item">Move to Trash</div>
-          <div class="finder-menu-item">Get Info</div>
-          <div class="finder-menu-sep"></div>
-          <div class="finder-menu-item finder-menu-highlight">
-            <span>Convert to</span>
-            <span>▸</span>
-          </div>
-          <div class="finder-menu-sep"></div>
-          <div class="finder-menu-item">Share...</div>
-          <div class="finder-menu-item">Copy</div>
-          
-          <!-- Submenu -->
-          <div class="finder-submenu">
-            <div class="finder-submenu-label">3 free conversions/month</div>
-            <div class="finder-menu-item">MP4</div>
-            <div class="finder-menu-item">MOV (QuickTime)</div>
-            <div class="finder-menu-item">WebM</div>
-            <div class="finder-menu-item">Extract Audio <span style="opacity:0.45; font-size:11px; font-family: var(--f-mono);">→ MP3 · AAC · WAV · FLAC</span></div>
-            <div class="finder-menu-sep"></div>
-            <div class="finder-submenu-label">Pro Only</div>
-            <div class="finder-menu-item">
-              <span>Batch Convert</span>
-              <span class="finder-submenu-lock">🔒</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1571,6 +1310,7 @@
         <div class="compare-sub">Native macOS · Local · $9.99</div>
         <ul class="compare-list">
           <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>100% local conversion</li>
+          <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Drag from any app, window, or folder</li>
           <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Handles files of any size</li>
           <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets built in</li>
           <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>One-time $9.99 purchase</li>
@@ -1582,7 +1322,6 @@
         <div class="compare-sub">HandBrake, Permute, etc.</div>
         <ul class="compare-list">
           <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Overwhelming options & presets</li>
-          <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>No Finder integration</li>
           <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>No fit-to-limit presets</li>
           <li><svg class="cross" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>More expensive ($15+)</li>
         </ul>
@@ -1612,7 +1351,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited image conversions (free tier)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited video & audio conversions</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited PDF conversions (convert &amp; compress)</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Batch Finder conversion</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Batch conversion (drag multiple files at once)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Free updates to version 1.x</li>
       </ul>
@@ -1680,10 +1419,17 @@
       <details class="faq-item" open>
         <summary class="faq-q">How is this different from macOS Quick Actions?</summary>
         <div class="faq-a">
-          macOS has a built-in "Convert Image" Quick Action that handles PNG, JPG, and HEIC. Convertible does much more: video formats (MKV, WebM, MP4, MOV), audio (MP3, FLAC, etc.), PDF compression, fit-to-target size presets, and batch processing. Plus a Finder extension that works everywhere.
+          macOS has a built-in "Convert Image" Quick Action that handles PNG, JPG, and HEIC. Convertible does much more: video formats (MKV, WebM, MP4, MOV), audio (MP3, FLAC, etc.), PDF compression, fit-to-target size presets, and batch processing. Plus a menu bar presence and drag-and-drop from any app.
         </div>
       </details>
       
+      <details class="faq-item">
+        <summary class="faq-q">Can I right-click a file in Finder to convert it?</summary>
+        <div class="faq-a">
+          Not in v1. macOS's sandbox requirements make Finder integration unreliable for App Store apps, so we focused v1 on making drag-and-drop and menu bar access as fast as possible. A simple workflow: drag your file into the app, pick a format, done. We're exploring macOS Shortcuts integration for a future release.
+        </div>
+      </details>
+
       <details class="faq-item">
         <summary class="faq-q">Is it really a one-time purchase?</summary>
         <div class="faq-a">
@@ -1694,7 +1440,7 @@
       <details class="faq-item">
         <summary class="faq-q">What's the difference between the free tier and Pro?</summary>
         <div class="faq-a">
-          The free tier includes unlimited image conversions, all compression presets, and single-file Finder extension for images, forever, no expiry. Batch conversion in the Finder extension is Pro-only. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 video/audio conversions and 5 PDF conversions per month as a taste.
+          The free tier includes unlimited image conversions and all compression presets, forever, no expiry. Batch conversion (dragging multiple files at once) is Pro-only. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 video/audio conversions and 5 PDF conversions per month as a taste.
         </div>
       </details>
       
