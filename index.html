@@ -1027,7 +1027,39 @@
     stroke: var(--accent);
     flex-shrink: 0;
   }
-  
+
+  .waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .waitlist-form input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: var(--f-body);
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .waitlist-form input[type="email"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232, 93, 47, 0.15);
+  }
+
+  .waitlist-form button {
+    width: 100%;
+    justify-content: center;
+  }
+
   /* ─── FAQ ─── */
   .faq-list {
     max-width: 720px;
@@ -1215,7 +1247,7 @@
       <a href="#formats">Formats</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#download" class="btn btn-primary">Download</a>
+      <a href="#download" class="btn btn-primary">Join waitlist</a>
     </div>
   </div>
 </nav>
@@ -1226,7 +1258,7 @@
     <div class="hero-top">
       <div class="hero-badge">
         <span class="dot"></span>
-        Privacy-first · Available for macOS 14+
+        Privacy-first · Coming soon to the Mac App Store
       </div>
     </div>
     <h1>Convert files<br/>without <em>handing them over.</em></h1>
@@ -1235,7 +1267,7 @@
     </p>
     <div class="hero-cta">
       <a href="#download" class="btn btn-accent btn-large">
-        Download for Mac · $9.99
+        Join the waitlist
       </a>
       <a href="#features" class="btn btn-large" style="background: transparent; color: var(--ink); border: 1px solid var(--line);">
         See how it works
@@ -1575,7 +1607,7 @@
       <div class="pricing-name">Convertible Pro</div>
       <div class="pricing-price"><sup>$</sup>9<span class="cents">.99</span></div>
       <div class="pricing-note">one-time · free updates to version 1.x</div>
-      
+
       <ul class="pricing-features">
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited image conversions (free tier)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Unlimited video & audio conversions</li>
@@ -1584,13 +1616,18 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Fit-to-target presets</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Free updates to version 1.x</li>
       </ul>
-      
-      <a href="#" class="btn btn-accent btn-large" style="width: 100%; justify-content: center;">
-        Download for Mac
-      </a>
-      
-      <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px; font-family: var(--f-mono);">
-        Try the free tier first. Upgrade when you need more.
+
+      <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 12px; font-family: var(--f-mono); text-align: center;">
+        Currently in App Store review. Join the waitlist and we'll email you the moment it's live.
+      </p>
+
+      <form action="https://formspree.io/f/mzdyzzjd" method="POST" class="waitlist-form">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+        <button type="submit" class="btn btn-accent btn-large">Notify me</button>
+      </form>
+
+      <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px; font-family: var(--f-mono); text-align: center;">
+        No spam. One email at launch.
       </p>
     </div>
   </div>
