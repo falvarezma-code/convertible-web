@@ -12,12 +12,77 @@
   .email { display: inline-block; padding: 14px 28px; background: #1a1a1e; color: #f6f3ec; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 16px; }
   .links { margin-top: 48px; font-size: 14px; color: #7a7a82; }
   .links a { color: #7a7a82; margin: 0 12px; }
+
+  .faq { text-align: left; margin: 48px 0 40px; }
+  .faq h2 { font-size: 22px; margin-bottom: 20px; text-align: center; }
+  .faq details { border-top: 1px solid #e5e3dc; padding: 14px 0; }
+  .faq details:last-of-type { border-bottom: 1px solid #e5e3dc; }
+  .faq summary { font-weight: 600; cursor: pointer; font-size: 16px; color: #1a1a1e; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: #7a7a82; font-weight: 400; font-size: 20px; margin-left: 12px; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { color: #44444a; font-size: 15px; margin: 12px 0 4px; }
+  .faq details ul { color: #44444a; font-size: 15px; margin: 8px 0 4px; padding-left: 20px; }
+  .faq details li { margin-bottom: 4px; }
+  .contact { margin-top: 40px; }
 </style>
 </head>
 <body>
 <h1>Need help?</h1>
-<p>Email me directly. I read everything and reply as soon as I can.</p>
-<a href="mailto:hello@getconvertible.app" class="email">hello@getconvertible.app</a>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Where are my converted files saved?</summary>
+    <p>Convertible saves converted files to the output folder you chose when you first used the app. You can change this folder anytime in Settings (or Preferences).</p>
+  </details>
+
+  <details>
+    <summary>Why is video conversion slow on some files?</summary>
+    <p>Large video files take longer to process. Convertible uses your Mac's hardware acceleration (VideoToolbox) when available, which significantly speeds up MP4 and MOV conversions. Converting to WebM uses software encoding and will be slower.</p>
+  </details>
+
+  <details>
+    <summary>Can I convert multiple files at once?</summary>
+    <p>Yes. Drop multiple files into the Convertible window and click "Convert All." Each file gets its own format picker.</p>
+  </details>
+
+  <details>
+    <summary>How do I upgrade to Pro?</summary>
+    <p>You can access the upgrade screen from:</p>
+    <ul>
+      <li>Menu Bar → Upgrade to Pro</li>
+      <li>Or it appears automatically when you reach the free tier monthly limit</li>
+    </ul>
+    <p>The free tier includes unlimited image conversions, 3 video/audio conversions per month, and 5 PDF conversions per month. Pro is a one-time $9.99 purchase that removes all limits.</p>
+  </details>
+
+  <details>
+    <summary>Can I get a refund?</summary>
+    <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request one.</p>
+  </details>
+
+  <details>
+    <summary>Does Convertible work offline?</summary>
+    <p>Yes. All conversions happen locally on your Mac. The only network activity is purchase verification through Apple's StoreKit when you buy Pro.</p>
+  </details>
+
+  <details>
+    <summary>What formats are supported?</summary>
+    <ul>
+      <li><strong>Images:</strong> PNG, JPG, HEIC, WebP, TIFF, BMP, GIF</li>
+      <li><strong>Video:</strong> MP4, MOV, MKV, WebM, M4V</li>
+      <li><strong>Audio:</strong> MP3, AAC, M4A, WAV, FLAC, OGG</li>
+      <li><strong>Documents:</strong> PDF (compression and conversion)</li>
+    </ul>
+  </details>
+</section>
+
+<div class="contact">
+  <p>Still need help? Email me directly — I read every message and reply as soon as I can.</p>
+  <a href="mailto:hello@getconvertible.app" class="email">hello@getconvertible.app</a>
+</div>
 
 <div class="links">
   <a href="/">Home</a>
