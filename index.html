@@ -842,34 +842,7 @@
     flex-shrink: 0;
   }
 
-  .waitlist-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .waitlist-form input[type="email"] {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 15px;
-    font-family: var(--f-body);
-    color: var(--ink);
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .waitlist-form input[type="email"]:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(232, 93, 47, 0.15);
-  }
-
-  .waitlist-form button {
+  .download-cta {
     width: 100%;
     justify-content: center;
   }
@@ -1060,7 +1033,7 @@
       <a href="#formats">Formats</a>
       <a href="#pricing" data-sa-event="click_pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#download" class="btn btn-primary">Join waitlist</a>
+      <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" class="btn btn-primary" target="_blank" rel="noopener">Download</a>
     </div>
   </div>
 </nav>
@@ -1071,7 +1044,7 @@
     <div class="hero-top">
       <div class="hero-badge">
         <span class="dot"></span>
-        Privacy-first · Coming soon to the Mac App Store
+        Privacy-first · Available on the Mac App Store
       </div>
     </div>
     <h1>Convert files<br/>without <em>handing them over.</em></h1>
@@ -1079,8 +1052,8 @@
       The Mac file converter that never uploads anything. Images, video, audio, PDFs. All converted locally, instantly, and privately. Built for people who'd rather not send their files to a stranger's server.
     </p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn-accent btn-large">
-        Join the waitlist
+      <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" class="btn btn-accent btn-large" target="_blank" rel="noopener">
+        Download on the App Store
       </a>
       <a href="#features" class="btn btn-large" style="background: transparent; color: var(--ink); border: 1px solid var(--line);">
         See how it works
@@ -1356,17 +1329,12 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"/></svg>Free updates to version 1.x</li>
       </ul>
 
-      <p style="font-size: 13px; color: var(--ink-muted); margin-bottom: 12px; font-family: var(--f-mono); text-align: center;">
-        Currently in App Store review. Join the waitlist and we'll email you the moment it's live.
-      </p>
-
-      <form action="https://formspree.io/f/mzdyzzjd" method="POST" class="waitlist-form">
-        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
-        <button type="submit" class="btn btn-accent btn-large">Notify me</button>
-      </form>
+      <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" class="btn btn-accent btn-large download-cta" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
 
       <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px; font-family: var(--f-mono); text-align: center;">
-        No spam. One email at launch.
+        Available now on the Mac App Store.
       </p>
     </div>
   </div>
