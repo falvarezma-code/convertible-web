@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary SEO -->
+<title>Convert MKV to MP4 on Mac: No Upload | Convertible</title>
+<meta name="description" content="Convert MKV to MP4 on your Mac without uploading anything. Convertible runs locally, keeps H.264/H.265 quality intact, and handles files of any size. $9.99." />
+<meta name="keywords" content="convert mkv to mp4 mac, mkv to mp4 mac, mkv converter mac, open mkv mac, mkv quicktime, mac mkv to mp4 local" />
+<meta name="author" content="Convertible" />
+<link rel="canonical" href="https://getconvertible.app/convert-mkv-to-mp4-mac.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getconvertible.app/convert-mkv-to-mp4-mac.html" />
+<meta property="og:title" content="Convert MKV to MP4 on Mac: No Upload" />
+<meta property="og:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
+<meta property="og:image" content="https://getconvertible.app/assets/images/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Convertible" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Convert MKV to MP4 on Mac: No Upload" />
+<meta name="twitter:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
+<meta name="twitter:image" content="https://getconvertible.app/assets/images/og-image.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/images/convertible-logo.png" />
+<link rel="apple-touch-icon" href="/assets/images/convertible-logo.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Convertible",
+  "operatingSystem": "macOS 14+",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Privacy-first file converter for macOS. Convert images, video, audio, and PDFs locally without uploading anything.",
+  "url": "https://getconvertible.app"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://getconvertible.app"},
+    {"@type": "ListItem", "position": 2, "name": "Video Conversion", "item": "https://getconvertible.app/#formats"},
+    {"@type": "ListItem", "position": 3, "name": "Convert MKV to MP4 on Mac", "item": "https://getconvertible.app/convert-mkv-to-mp4-mac.html"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will I lose quality converting MKV to MP4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not if the video inside is H.264 or H.265, which covers most MKV files. Convertible copies the existing video and audio streams into an MP4 container without re-encoding, so every frame and every sample is preserved bit-for-bit. The output file size will be nearly identical to the original. Quality loss only happens if the MKV contains a codec MP4 can't carry, in which case a re-encode is unavoidable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't QuickTime open MKV files in the first place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple has never shipped an MKV demuxer in macOS. QuickTime, Preview, iMovie, and Final Cut all rely on Core Media, which supports MP4, MOV, and M4V among others, but not Matroska. No plugin fixes this system-wide. The practical workaround is to convert the file once, keep the MP4, and everything Apple makes will open it normally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to subtitles and multiple audio tracks in an MKV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The primary audio track is preserved as-is, copied into the MP4 container with no re-encoding, so there's no quality loss. Secondary audio tracks (second-language dubs, director commentary) are dropped in v1. Subtitles are also dropped, including SRT and PGS. If multi-track audio or embedded subtitles matter for your file, HandBrake is still the better tool for now and we're looking at adding explicit track mapping in a later release."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to convert a 5 GB MKV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the video is H.264 or H.265 (almost always the case) Convertible does a stream copy, which is effectively limited by disk I/O rather than CPU. On an Apple Silicon Mac with an internal SSD, expect roughly the time it takes to read and write the file once. If the codec is old enough to force a re-encode, timing lands in the usual video-encoding range, somewhere between half and a few times real-time depending on your Mac."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the converted MP4 play in iMovie, Final Cut, and Photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. An MP4 with H.264 or H.265 video is the native format Apple's tools are built around. Once the container is MP4, iMovie will import it, Final Cut will let you drag it onto the timeline, and Photos will accept it into your library. You can also AirDrop it straight to an iPhone with no further conversion."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #F6F3EC;
+    --ink: #1A1A1E;
+    --ink-soft: #44444A;
+    --ink-muted: #7A7A82;
+    --accent: #E85D2F;
+    --accent-dark: #C94A22;
+    --line: #D9D4C6;
+    --line-soft: #E5E0D0;
+
+    --f-display: 'Fraunces', Georgia, serif;
+    --f-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151416;
+      --ink: #F2EFE5;
+      --ink-soft: #C8C4B8;
+      --ink-muted: #8B8780;
+      --accent: #FF6B3D;
+      --accent-dark: #E85D2F;
+      --line: #2C2B2E;
+      --line-soft: #252427;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--f-body);
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 243, 236, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(21, 20, 22, 0.85); }
+  }
+
+  .nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--f-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(232, 93, 47, 0.18));
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: var(--f-body);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .nav-inner .btn-primary {
+    background: rgba(0,0,0,0.04);
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-inner .btn-primary {
+      background: rgba(255,255,255,0.04);
+      color: var(--ink);
+      border-color: rgba(255,255,255,0.06);
+    }
+  }
+
+  .nav-inner .btn-primary:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(232,93,47,0.18);
+  }
+
+  @media (max-width: 720px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
+
+  /* ─── ARTICLE ─── */
+  article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 24px;
+  }
+
+  .article-meta {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+  }
+  .article-meta a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .article-meta a:hover { color: var(--ink); }
+  .article-meta span { margin: 0 8px; opacity: 0.6; }
+
+  article h1 {
+    font-family: var(--f-display);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .dek {
+    font-size: 21px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+  }
+
+  /* ─── INLINE VIDEO ─── */
+  .article-video {
+    margin: 8px auto 40px;
+    max-width: 480px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #000;
+    box-shadow:
+      0 24px 60px -24px rgba(0,0,0,0.35),
+      0 2px 6px -2px rgba(0,0,0,0.10);
+  }
+  .article-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .article-video figcaption {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--ink-muted);
+    padding: 11px 14px;
+    background: var(--bg);
+    border-top: 1px solid var(--line-soft);
+  }
+  @media (prefers-color-scheme: dark) {
+    .article-video figcaption { background: var(--bg); }
+  }
+
+  article h2 {
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    font-variation-settings: "opsz" 144;
+  }
+
+  article h3 {
+    font-family: var(--f-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 36px 0 12px;
+  }
+
+  article p {
+    margin-bottom: 24px;
+  }
+  article p:last-child { margin-bottom: 0; }
+
+  article a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  article ol, article ul {
+    margin: 0 0 24px 24px;
+    padding: 0;
+  }
+
+  article li {
+    margin-bottom: 14px;
+    padding-left: 6px;
+  }
+  article li:last-child { margin-bottom: 0; }
+  article li strong {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  article strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ─── CTA AT END ─── */
+  .cta-end {
+    margin: 56px 0 8px;
+    padding: 28px 28px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+  .cta-end a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta-end a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--bg);
+    padding: 48px 0 40px;
+    border-top: 1px solid var(--line);
+    margin-top: 64px;
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: var(--f-mono);
+  }
+  .footer-links a:hover { color: var(--ink); }
+  .footer-copy {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: var(--f-mono);
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="/assets/images/convertible-logo.png" alt="Convertible" class="logo-mark" />
+      Convertible
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#formats">Formats</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" class="btn btn-primary" target="_blank" rel="noopener">Download</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── ARTICLE ─── -->
+<article>
+  <div class="article-meta">
+    <a href="/">Home</a><span>/</span><a href="/#formats">Video</a><span>/</span>MKV to MP4
+  </div>
+
+  <h1>Convert MKV to MP4 on Mac, without handing the file over.</h1>
+
+  <p class="dek">
+    MKV is a container Apple refuses to acknowledge. Most MKV files already contain video your Mac could play, the wrapper is the only real problem. Convertible rewrites the container locally, usually in seconds, and keeps the quality exactly where it was.
+  </p>
+
+  <figure class="article-video">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="/assets/video/vacation-4k-footage-poster.jpg"
+           width="1700" height="1032">
+      <source src="/assets/video/vacation-4k-footage.mp4" type="video/mp4" />
+    </video>
+    <figcaption>
+      A 4K vacation clip. The video inside is already H.264, so QuickTime could play it. The MKV wrapper is the only thing keeping it locked out. Convertible swaps the wrapper for MP4 in seconds, on your Mac, without touching a single pixel.
+    </figcaption>
+  </figure>
+
+  <p>
+    Drop the MKV into Convertible, choose MP4 from the format dropdown, click Convert. If the MKV uses H.264 or H.265 video (which it almost certainly does) the app remuxes the stream into MP4 without re-encoding. Same picture, same audio, same size, in a file iMovie and QuickTime will actually open.
+  </p>
+
+  <h2>How it works, step by step</h2>
+
+  <ol>
+    <li>
+      <strong>Drop the MKV into Convertible.</strong>
+      From Finder, the Desktop, a Safari download, or a folder somewhere else. The app accepts one file or a hundred.
+    </li>
+    <li>
+      <strong>Pick MP4 as the output format.</strong>
+      Each file has its own format dropdown. Defaults are sensible; you can change one without changing the others.
+    </li>
+    <li>
+      <strong>Optional: choose a size target.</strong>
+      If you need to fit the MP4 into a message or upload, pick Email (≤25 MB), Discord (≤10 MB), iMessage (≤100 MB), or WhatsApp (≤16 MB). Leave it on Original to keep the source bitrate.
+    </li>
+    <li>
+      <strong>Click Convert.</strong>
+      The MP4 lands next to the original, or wherever you drag the output icon. Your files never leave the Mac.
+    </li>
+  </ol>
+
+  <h2>Why the built-in tools don't help</h2>
+
+  <p>
+    QuickTime Player won't open MKV files. Neither will Preview, iMovie, Final Cut, or Photos. Apple's Core Media framework has never shipped a Matroska demuxer, and there's no public roadmap suggesting that will change. Double-clicking an MKV on a fresh Mac gets you a "QuickTime Player can't open this file" dialog and nothing else.
+  </p>
+
+  <p>
+    VLC handles playback, and in theory it can re-wrap an MKV to MP4 through File → Convert / Stream. In practice that dialog is built for a different decade, and its default profiles re-encode the video even when they don't have to, so you wait twenty minutes and end up with a file that's slightly worse than the original. HandBrake is honest about what it does: it always re-encodes. That's useful when you actually want to shrink a file, but it's the wrong tool if your MKV is already H.264 and you just need the container swapped.
+  </p>
+
+  <h2>It changes the wrapper, not the picture</h2>
+
+  <p>
+    Most MKV files on the web are H.264 or H.265 inside a Matroska wrapper. MP4 supports both codecs natively, which means there is nothing in the video to actually convert. The pixels can stay exactly as they are, and only the container has to change. Convertible attempts a stream copy first, and for the typical H.264/H.265 MKV that succeeds, so a two-hour 4K MKV becomes a two-hour 4K MP4 at roughly the speed your SSD can read and write. If the codec inside turns out to be incompatible with MP4, the app falls back to a hardware-accelerated re-encode through VideoToolbox.
+  </p>
+
+  <p>
+    MKV files also tend to be large. Multi-gigabyte is the norm for anything at 1080p or above. Online converters leave you with two options: wait an hour uploading a 6 GB file to someone else's server on a residential connection, or pay for a plan that lifts the size cap. Convertible doesn't care how big the file is, it never leaves the Mac. The only upper bound is free disk space.
+  </p>
+
+  <p>
+    The honest trade-off: if you need heavy re-encoding work, custom CRF values, two-pass encoding, fine-grained filter chains, HandBrake's preset library is still better than Convertible's. Convertible is built for the other 90% of the time, when you just want the file to open in QuickTime and get on with your day.
+  </p>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>Will I lose quality converting MKV to MP4?</h3>
+  <p>
+    Not if the video inside is H.264 or H.265, which covers most MKV files. Convertible copies the existing video and audio streams into an MP4 container without re-encoding, so every frame and every sample is preserved bit-for-bit. The output file size will be nearly identical to the original. Quality loss only happens if the MKV contains a codec MP4 can't carry, in which case a re-encode is unavoidable.
+  </p>
+
+  <h3>Why doesn't QuickTime open MKV files in the first place?</h3>
+  <p>
+    Apple has never shipped an MKV demuxer in macOS. QuickTime, Preview, iMovie, and Final Cut all rely on Core Media, which supports MP4, MOV, and M4V among others, but not Matroska. No plugin fixes this system-wide. The practical workaround is to convert the file once, keep the MP4, and everything Apple makes will open it normally.
+  </p>
+
+  <h3>What happens to subtitles and multiple audio tracks?</h3>
+  <p>
+    The primary audio track is preserved as-is, copied into the MP4 container with no re-encoding, so there's no quality loss. Secondary audio tracks (second-language dubs, director commentary) are dropped in v1. Subtitles are also dropped, including SRT and PGS. If multi-track audio or embedded subtitles matter for your file, HandBrake is still the better tool for now, and we're looking at adding explicit track mapping in a later release.
+  </p>
+
+  <h3>How long does a 5 GB MKV take to convert?</h3>
+  <p>
+    If the video is H.264 or H.265 (almost always the case) Convertible does a stream copy, which is effectively limited by disk I/O rather than CPU. On an Apple Silicon Mac with an internal SSD, expect roughly the time it takes to read and write the file once. If the codec is old enough to force a re-encode, timing lands in the usual video-encoding range, somewhere between half and a few times real-time depending on your Mac.
+  </p>
+
+  <h3>Will the converted MP4 play in iMovie, Final Cut, and Photos?</h3>
+  <p>
+    Yes. An MP4 with H.264 or H.265 video is the native format Apple's tools are built around. Once the container is MP4, iMovie will import it, Final Cut will let you drag it onto the timeline, and Photos will accept it into your library. You can also AirDrop it straight to an iPhone with no further conversion.
+  </p>
+
+  <div class="cta-end">
+    Convertible · $9.99 on the <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" target="_blank" rel="noopener">Mac App Store</a>
+  </div>
+</article>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">
+      © 2026 Convertible · Made with care for your Mac
+    </div>
+    <ul class="footer-links">
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="/support.html">Support</a></li>
+      <li><a href="mailto:hello@getconvertible.app">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
+    });
+  }
+</script>
+
+</body>
+</html>
