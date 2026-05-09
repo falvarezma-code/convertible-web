@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://getconvertible.app/convert-mkv-to-mp4-mac.html" />
 <meta property="og:title" content="Convert MKV to MP4 on Mac: No Upload" />
 <meta property="og:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
-<meta property="og:image" content="https://getconvertible.app/og-image.png" />
+<meta property="og:image" content="https://getconvertible.app/assets/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="Convertible" />
@@ -25,11 +25,11 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Convert MKV to MP4 on Mac: No Upload" />
 <meta name="twitter:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
-<meta name="twitter:image" content="https://getconvertible.app/og-image.png" />
+<meta name="twitter:image" content="https://getconvertible.app/assets/images/og-image.png" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="/convertible-logo.png" />
-<link rel="apple-touch-icon" href="/convertible-logo.png" />
+<link rel="icon" type="image/png" href="/assets/images/convertible-logo.png" />
+<link rel="apple-touch-icon" href="/assets/images/convertible-logo.png" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -295,7 +295,38 @@
     font-size: 21px;
     line-height: 1.5;
     color: var(--ink-soft);
-    margin-bottom: 44px;
+    margin-bottom: 36px;
+  }
+
+  /* ─── INLINE VIDEO ─── */
+  .article-video {
+    margin: 8px auto 40px;
+    max-width: 480px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #000;
+    box-shadow:
+      0 24px 60px -24px rgba(0,0,0,0.35),
+      0 2px 6px -2px rgba(0,0,0,0.10);
+  }
+  .article-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .article-video figcaption {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--ink-muted);
+    padding: 11px 14px;
+    background: var(--bg);
+    border-top: 1px solid var(--line-soft);
+  }
+  @media (prefers-color-scheme: dark) {
+    .article-video figcaption { background: var(--bg); }
   }
 
   article h2 {
@@ -411,7 +442,7 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">
-      <img src="/convertible-logo.png" alt="Convertible" class="logo-mark" />
+      <img src="/assets/images/convertible-logo.png" alt="Convertible" class="logo-mark" />
       Convertible
     </a>
     <div class="nav-links">
@@ -419,7 +450,7 @@
       <a href="/#formats">Formats</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#faq">FAQ</a>
-      <a href="/#waitlist" class="btn btn-primary">Join waitlist</a>
+      <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" class="btn btn-primary" target="_blank" rel="noopener">Download</a>
     </div>
   </div>
 </nav>
@@ -435,6 +466,17 @@
   <p class="dek">
     MKV is a container Apple refuses to acknowledge. Most MKV files already contain video your Mac could play, the wrapper is the only real problem. Convertible rewrites the container locally, usually in seconds, and keeps the quality exactly where it was.
   </p>
+
+  <figure class="article-video">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="/assets/video/vacation-4k-footage-poster.jpg"
+           width="1700" height="1032">
+      <source src="/assets/video/vacation-4k-footage.mp4" type="video/mp4" />
+    </video>
+    <figcaption>
+      A 4K vacation clip. The video inside is already H.264, so QuickTime could play it. The MKV wrapper is the only thing keeping it locked out. Convertible swaps the wrapper for MP4 in seconds, on your Mac, without touching a single pixel.
+    </figcaption>
+  </figure>
 
   <p>
     Drop the MKV into Convertible, choose MP4 from the format dropdown, click Convert. If the MKV uses H.264 or H.265 video (which it almost certainly does) the app remuxes the stream into MP4 without re-encoding. Same picture, same audio, same size, in a file iMovie and QuickTime will actually open.
@@ -513,7 +555,7 @@
   </p>
 
   <div class="cta-end">
-    Convertible · $9.99 on the <a href="/#waitlist">Mac App Store</a>
+    Convertible · $9.99 on the <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" target="_blank" rel="noopener">Mac App Store</a>
   </div>
 </article>
 
@@ -531,6 +573,16 @@
     </ul>
   </div>
 </footer>
+
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
+    });
+  }
+</script>
 
 </body>
 </html>
