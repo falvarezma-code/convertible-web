@@ -1,0 +1,46 @@
+{
+  "slug": "convert-mkv-to-mp4-mac",
+  "date": "2026-04-22",
+  "title": "Convert MKV to MP4 on Mac, without handing the file over.",
+  "meta_title": "Convert MKV to MP4 on Mac: No Upload | Convertible",
+  "meta_description": "Convert MKV to MP4 on your Mac without uploading anything. Convertible runs locally, keeps H.264/H.265 quality intact, and handles files of any size. $9.99.",
+  "meta_keywords": "convert mkv to mp4 mac, mkv to mp4 mac, mkv converter mac, open mkv mac, mkv quicktime, mac mkv to mp4 local",
+  "category": "Video",
+  "breadcrumb_name": "MKV to MP4",
+  "og_title": "Convert MKV to MP4 on Mac: No Upload",
+  "og_description": "The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap.",
+  "twitter_title": "Convert MKV to MP4 on Mac: No Upload",
+  "twitter_description": "The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap.",
+  "dek": "MKV is a container Apple has never supported. Most MKV files already contain video your Mac could play, the wrapper is the only real problem. Convertible rewrites the container locally, usually in seconds, and keeps the quality exactly where it was.",
+  "index_dek": "MKV is a container Apple has never supported. Most MKV files already contain video your Mac could play, the wrapper is the only real problem.",
+  "video": {
+    "src": "/assets/video/vacation-4k-footage.mp4",
+    "poster": "/assets/video/vacation-4k-footage-poster.jpg",
+    "width": 1700,
+    "height": 1032,
+    "caption": "A 4K vacation clip. The video inside is already H.264, so QuickTime could play it. The MKV wrapper is the only thing keeping it locked out. Convertible swaps the wrapper for MP4 in seconds, on your Mac, without touching a single pixel."
+  },
+  "body": "  <p>\n    Drop the MKV into Convertible, choose MP4 from the format dropdown, click Convert. If the MKV uses H.264 or H.265 video (which it almost certainly does) the app remuxes the stream into MP4 without re-encoding. Same picture, same audio, same size, in a file iMovie and QuickTime will actually open.\n  </p>\n\n  <h2>How it works, step by step</h2>\n\n  <ol>\n    <li>\n      <strong>Drop the MKV into Convertible.</strong>\n      From Finder, the Desktop, a Safari download, or a folder somewhere else. The app accepts one file or a hundred.\n    </li>\n    <li>\n      <strong>Pick MP4 as the output format.</strong>\n      Each file has its own format dropdown. Defaults are sensible; you can change one without changing the others.\n    </li>\n    <li>\n      <strong>Optional: choose a size target.</strong>\n      If you need to fit the MP4 into a message or upload, pick Email (≤25 MB), Discord (≤10 MB), iMessage (≤100 MB), or WhatsApp (≤16 MB). Leave it on Original to keep the source bitrate.\n    </li>\n    <li>\n      <strong>Click Convert.</strong>\n      The MP4 lands next to the original, or wherever you drag the output icon. Your files never leave the Mac.\n    </li>\n  </ol>\n\n  <h2>Why the built-in tools don't help</h2>\n\n  <p>\n    QuickTime Player won't open MKV files. Neither will Preview, iMovie, Final Cut, or Photos. Apple's Core Media framework has never shipped a Matroska demuxer, and there's no public roadmap suggesting that will change. Double-clicking an MKV on a fresh Mac gets you a \"QuickTime Player can't open this file\" dialog and nothing else.\n  </p>\n\n  <p>\n    VLC handles playback, and in theory it can re-wrap an MKV to MP4 through File → Convert / Stream. In practice that dialog is built for a different decade, and its default profiles re-encode the video even when they don't have to, so you wait twenty minutes and end up with a file that's slightly worse than the original. HandBrake is honest about what it does: it always re-encodes. That's useful when you actually want to shrink a file, but it's the wrong tool if your MKV is already H.264 and you just need the container swapped.\n  </p>\n\n  <h2>It changes the wrapper, not the picture</h2>\n\n  <p>\n    Most MKV files on the web are H.264 or H.265 inside a Matroska wrapper. MP4 supports both codecs natively, which means there is nothing in the video to actually convert. The pixels can stay exactly as they are, and only the container has to change. Convertible attempts a stream copy first, and for the typical H.264/H.265 MKV that succeeds, so a two-hour 4K MKV becomes a two-hour 4K MP4 at roughly the speed your SSD can read and write. If the codec inside turns out to be incompatible with MP4, the app falls back to a hardware-accelerated re-encode through VideoToolbox.\n  </p>\n\n  <p>\n    MKV files also tend to be large. Multi-gigabyte is the norm for anything at 1080p or above. Online converters leave you with two options: wait an hour uploading a 6 GB file to someone else's server on a residential connection, or pay for a plan that lifts the size cap. Convertible doesn't care how big the file is, it never leaves the Mac. The only upper bound is free disk space.\n  </p>\n\n  <p>\n    The honest trade-off: if you need heavy re-encoding work, custom CRF values, two-pass encoding, fine-grained filter chains, HandBrake's preset library is still better than Convertible's. Convertible is built for the other 90% of the time, when you just want the file to open in QuickTime and get on with your day.\n  </p>\n",
+  "faqs": [
+    {
+      "question": "Will I lose quality converting MKV to MP4?",
+      "answer": "Not if the video inside is H.264 or H.265, which covers most MKV files. Convertible copies the existing video and audio streams into an MP4 container without re-encoding, so every frame and every sample is preserved bit-for-bit. The output file size will be nearly identical to the original. Quality loss only happens if the MKV contains a codec MP4 can't carry, in which case a re-encode is unavoidable."
+    },
+    {
+      "question": "Why doesn't QuickTime open MKV files in the first place?",
+      "answer": "Apple has never shipped an MKV demuxer in macOS. QuickTime, Preview, iMovie, and Final Cut all rely on Core Media, which supports MP4, MOV, and M4V among others, but not Matroska. No plugin fixes this system-wide. The practical workaround is to convert the file once, keep the MP4, and everything Apple makes will open it normally."
+    },
+    {
+      "question": "What happens to subtitles and multiple audio tracks?",
+      "answer": "The primary audio track is preserved as-is, copied into the MP4 container with no re-encoding, so there's no quality loss. Secondary audio tracks (second-language dubs, director commentary) are dropped in v1. Subtitles are also dropped, including SRT and PGS. If multi-track audio or embedded subtitles matter for your file, HandBrake is still the better tool for now, and we're looking at adding explicit track mapping in a later release."
+    },
+    {
+      "question": "How long does a 5 GB MKV take to convert?",
+      "answer": "If the video is H.264 or H.265 (almost always the case) Convertible does a stream copy, which is effectively limited by disk I/O rather than CPU. On an Apple Silicon Mac with an internal SSD, expect roughly the time it takes to read and write the file once. If the codec is old enough to force a re-encode, timing lands in the usual video-encoding range, somewhere between half and a few times real-time depending on your Mac."
+    },
+    {
+      "question": "Will the converted MP4 play in iMovie, Final Cut, and Photos?",
+      "answer": "Yes. An MP4 with H.264 or H.265 video is the native format Apple's tools are built around. Once the container is MP4, iMovie will import it, Final Cut will let you drag it onto the timeline, and Photos will accept it into your library. You can also AirDrop it straight to an iPhone with no further conversion."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "convert-mp4-to-mp3-mac",
+  "date": "2026-05-08",
+  "title": "Convert MP4 to MP3 on Mac, audio-only in seconds.",
+  "meta_title": "Convert MP4 to MP3 on Mac: Extract Audio Locally | Convertible",
+  "meta_description": "Extract MP3 audio from any MP4 video on macOS without uploading anything. Convertible runs locally, sensible bitrate defaults, ready for podcasts, lectures, or transcription.",
+  "meta_keywords": "convert mp4 to mp3 mac, extract audio mp4 mac, mp4 to mp3 mac, video to mp3 mac, audio extraction macos, mp4 audio only",
+  "category": "Audio",
+  "breadcrumb_name": "MP4 to MP3",
+  "og_title": "Convert MP4 to MP3 on Mac: Extract Audio Locally",
+  "og_description": "Pull the audio out of any MP4 video on your Mac, locally and quickly. Sensible defaults, ready for podcasts, lectures, or transcription.",
+  "twitter_title": "Convert MP4 to MP3 on Mac: Extract Audio Locally",
+  "twitter_description": "Pull the audio out of any MP4 video on your Mac, locally and quickly. Sensible defaults, ready for podcasts, lectures, or transcription.",
+  "dek": "Sometimes you only want the audio. A two-hour lecture, a podcast you grabbed as video, a meeting recording you need to feed into a transcription tool. Convertible pulls the audio out of any MP4 locally on your Mac, encodes it to MP3 at a sensible bitrate, and never sends the file anywhere.",
+  "index_dek": "Pull the audio out of any MP4 video. Lectures, podcasts, meeting recordings, ready for listening or transcription, all done locally.",
+  "body": "  <p>\n    Drop the MP4 into Convertible, choose MP3, click Convert. The audio track is extracted and encoded to MP3 with a sensible default bitrate. The original video file is untouched. Files never leave your Mac.\n  </p>\n\n  <h2>How it works, step by step</h2>\n\n  <ol>\n    <li>\n      <strong>Drop the MP4 (or batch of MP4s) into Convertible.</strong>\n      Lecture recordings, podcast video versions, Zoom exports, screen captures with audio. Anything with an audio track works.\n    </li>\n    <li>\n      <strong>Pick MP3 as the output format.</strong>\n      If you'd rather have AAC (smaller at the same quality, broadly compatible), WAV (uncompressed, for editing), or M4A (Apple's container, lossless option available), they're one click away in the same dropdown.\n    </li>\n    <li>\n      <strong>Optional: pick a quality preset.</strong>\n      Voice (lower bitrate, perfect for lectures and podcasts), Music (higher bitrate, full frequency range), or Original (matches whatever bitrate the source audio was). The Voice preset gives you noticeably smaller files for content that's mostly speech.\n    </li>\n    <li>\n      <strong>Click Convert.</strong>\n      The MP3 lands next to the original. A two-hour lecture comes out in well under a minute on Apple Silicon.\n    </li>\n  </ol>\n\n  <h2>Why audio extraction from video is awkward</h2>\n\n  <p>\n    macOS doesn't ship a built-in tool for this. QuickTime Player can export audio-only, but only as an M4A (AAC) file, and only if you go through File → Export As → Audio Only. It works, but it's three menu levels deep, doesn't batch, and the output is AAC even when you wanted MP3 specifically (and a lot of older transcription tools and audio editors still want MP3).\n  </p>\n\n  <p>\n    Online MP4-to-MP3 converters work too, but you're uploading what is often a large video file (hundreds of megabytes for a lecture, gigabytes for an HD recording) over a slow connection just to get back a much smaller MP3. And if the source is sensitive (a meeting recording, a lecture you paid to attend, an interview with a source) handing it to a third-party server is a worse trade than just running the conversion locally.\n  </p>\n\n  <h2>How Convertible handles it</h2>\n\n  <p>\n    Convertible uses ffmpeg under the hood, called locally with your Mac's hardware. For MP3 specifically the audio is decoded from whatever codec the MP4 used (almost always AAC) and re-encoded to MP3 at the bitrate you picked. There is one decode and one encode, both done in memory, both fast on Apple Silicon. A two-hour 1080p MP4 produces a roughly 30 to 60 MB MP3 in under a minute, depending on bitrate and your Mac.\n  </p>\n\n  <p>\n    The output is also a clean handoff into transcription tools. Pair Convertible with MacWhisper (or any local Whisper-based transcriber): drag your meeting MP4 into Convertible, get an MP3, drop it into MacWhisper, get a transcript. The whole loop is local, which matters for the kinds of recordings you'd actually want to transcribe in the first place. AAC works for MacWhisper too, so if you're going straight to transcription M4A is slightly higher quality at the same file size.\n  </p>\n\n  <p>\n    The honest trade-off: MP3 is an aging codec. It's universally supported, which is why we default to it, but at the same bitrate AAC sounds slightly better and Opus sounds noticeably better. If you control what plays the file, AAC or Opus are technically the right call; if you're sending the file to someone else's tool that you don't control, MP3 is the safest bet.\n  </p>\n",
+  "faqs": [
+    {
+      "question": "Can I extract just part of the audio from a long video?",
+      "answer": "Not in v1, the conversion is whole-file. If you need a clip from a longer recording, the cleanest workflow today is to convert the full file to MP3 and then trim the MP3 in QuickTime Player (which can trim audio files just as easily as video). Per-file timecode trimming is on the roadmap, but for now whole-file extraction is what we ship."
+    },
+    {
+      "question": "What bitrate should I pick?",
+      "answer": "For speech (lectures, podcasts, meetings, interviews), 96 to 128 kbps is more than enough; the Voice preset uses 128 kbps. For music or anything where audio quality matters, 192 to 256 kbps gives a result that's effectively transparent for most listeners; the Music preset uses 192 kbps. Going above 256 kbps in MP3 is rarely worth it; if you want true high-fidelity audio you should be using AAC or a lossless format, not MP3."
+    },
+    {
+      "question": "MP3 vs AAC, which is better?",
+      "answer": "AAC is technically better. At the same bitrate it sounds noticeably cleaner, especially for music and at lower bitrates. The reason MP3 is still the default for things like \"send me the audio\" is universal compatibility: every device, app, browser, and operating system from the last twenty years can play MP3, while AAC support is broad but not quite universal. If you control the playback path (your own listening, a tool you've already tested), pick AAC. If you're sending the file to someone else, pick MP3."
+    },
+    {
+      "question": "Will the audio be clear enough for transcription?",
+      "answer": "Yes. Whisper-based transcription (MacWhisper, OpenAI Whisper, Aiko) doesn't need high-fidelity audio. It needs intelligible speech, and 128 kbps MP3 (or even lower) is more than enough. If you're going straight to transcription, you can use the Voice preset or even drop to 64 kbps mono and the transcript quality will be the same. The bottleneck is the recording, not the encoding."
+    },
+    {
+      "question": "What about other video formats: MOV, MKV, WebM?",
+      "answer": "All of them work the same way. Convertible reads the audio track out of any video container it supports (MP4, MOV, MKV, WebM, AVI, M4V, plus more) and writes MP3. The video codec inside is irrelevant; only the audio track is touched."
+    }
+  ]
+}

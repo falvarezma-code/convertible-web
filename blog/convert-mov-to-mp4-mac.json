@@ -1,0 +1,39 @@
+{
+  "slug": "convert-mov-to-mp4-mac",
+  "date": "2026-05-08",
+  "title": "Convert MOV to MP4 on Mac, without re-encoding when you don't have to.",
+  "meta_title": "Convert MOV to MP4 on Mac: No Quality Loss | Convertible",
+  "meta_description": "Convert MOV to MP4 on macOS locally. Convertible stream-copies H.264/H.265 MOV files into MP4 in seconds with no quality loss, and never uploads anything.",
+  "meta_keywords": "convert mov to mp4 mac, mov to mp4 mac, mov converter mac, iphone screen recording mp4, quicktime mov to mp4, mov to mp4 no re-encode",
+  "category": "Video",
+  "breadcrumb_name": "MOV to MP4",
+  "og_title": "Convert MOV to MP4 on Mac Without Re-encoding",
+  "og_description": "Most MOV files are already MP4 underneath. Convertible swaps the wrapper locally in seconds with no quality loss.",
+  "twitter_title": "Convert MOV to MP4 on Mac Without Re-encoding",
+  "twitter_description": "Most MOV files are already MP4 underneath. Convertible swaps the wrapper locally in seconds with no quality loss.",
+  "dek": "MOV is Apple's container, MP4 is everyone else's. The video stream inside is usually identical, which means the conversion can be a wrapper swap rather than a quality-destroying re-encode. Convertible does the swap locally in seconds, and only re-encodes when the file actually needs it.",
+  "index_dek": "Most MOV files are MP4 underneath. Convertible swaps the wrapper locally with no quality loss, and only re-encodes when it has to.",
+  "body": "  <p>\n    Drop the MOV into Convertible, choose MP4, click Convert. If the video inside is H.264 or H.265 (which it almost always is, including iPhone recordings, screen captures, and most QuickTime exports) the app remuxes the stream into MP4 without re-encoding. Same picture, same audio, same file size, in a container that plays everywhere.\n  </p>\n\n  <h2>How it works, step by step</h2>\n\n  <ol>\n    <li>\n      <strong>Drop the MOV into Convertible.</strong>\n      From a screen recording, an iPhone share, a Final Cut export, anywhere. The app handles single files or large batches.\n    </li>\n    <li>\n      <strong>Pick MP4 as the output format.</strong>\n      Convertible inspects the codec inside the MOV first. If it's already MP4-compatible, it queues a stream copy. If not, it falls back to a hardware-accelerated re-encode without asking.\n    </li>\n    <li>\n      <strong>Optional: pick a size target.</strong>\n      Email (≤25 MB), Discord (≤10 MB), iMessage (≤100 MB), WhatsApp (≤16 MB), or Original. Size targets force a re-encode because there's no other way to shrink a file; leave it on Original for a true wrapper-only conversion.\n    </li>\n    <li>\n      <strong>Click Convert.</strong>\n      The MP4 lands next to the original. The original is never modified. Files never leave the Mac.\n    </li>\n  </ol>\n\n  <h2>Why MOV files don't play everywhere</h2>\n\n  <p>\n    MOV is Apple's container format. It predates MP4 by about a decade and is, in fact, the format MP4 was based on. Underneath the wrapper, modern MOV files store video using the same H.264 or H.265 codecs that MP4 uses, with the same AAC audio. So in technical terms, the two formats are 90 percent the same file with a different label on the front.\n  </p>\n\n  <p>\n    The trouble is that the other 10 percent matters. A lot of Windows software refuses MOV outright. YouTube and Vimeo accept it but quietly transcode on their side, which costs you upload time and quality. Some Android phones won't preview a MOV in their stock gallery app. Email clients sometimes display a MOV as an unrecognized attachment. None of those rejections are about the video itself, they're about the wrapper, which is exactly the part Convertible can swap cheaply.\n  </p>\n\n  <h2>Stream copy when possible, re-encode only when needed</h2>\n\n  <p>\n    For an H.264 or H.265 MOV, Convertible does what is called a stream copy: the encoded video bits are read from the MOV container and written into an MP4 container with no decoding and no re-encoding. The conversion is bound by disk speed, not CPU. A two-hour MOV becomes a two-hour MP4 in roughly the time your SSD takes to read and write the file. There is, by definition, no quality loss because the encoded bits are identical to the original.\n  </p>\n\n  <p>\n    Some MOV files do need a re-encode. The common case is ProRes, Apple's professional intermediate codec used in Final Cut and on cameras like Blackmagic and certain Atomos recorders. ProRes can't go into an MP4 container, so a ProRes MOV has to be re-encoded to H.264 or H.265 first. Convertible uses VideoToolbox, the Apple Silicon hardware encoder, which means the re-encode is fast and battery-friendly. The output quality is configurable; the default targets visually-lossless at a sensible bitrate.\n  </p>\n\n  <p>\n    The honest trade-off: if you need fine-grained control over the encode (specific CRF values, two-pass, custom audio bitrates, advanced filters), HandBrake gives you more knobs. Convertible is built for the case where you just want a working MP4 without losing the afternoon to settings.\n  </p>\n",
+  "faqs": [
+    {
+      "question": "Why is my MOV file so much larger than I expected?",
+      "answer": "Two common reasons. First, if the MOV came out of Final Cut, Compressor, or a pro camera, it might be ProRes, which is intentionally large because it's designed for editing rather than delivery. A few minutes of 4K ProRes can easily run into the tens of gigabytes. Second, even an H.264 MOV from QuickTime Player records at a relatively high bitrate by default. Converting to MP4 with a stream copy keeps the same size; if you actually want a smaller file, pick a size target or a quality preset, which forces a (still fast) re-encode."
+    },
+    {
+      "question": "Will iMovie or Final Cut export MP4 directly?",
+      "answer": "No, not quite. Both apps export to MOV by default and don't offer MP4 as a direct output option. The workaround is to export the MOV from iMovie or Final Cut and then convert that MOV to MP4. Because Final Cut typically encodes to H.264 on export, the MOV-to-MP4 step is a clean stream copy in Convertible, no quality loss and no second encoding pass."
+    },
+    {
+      "question": "Will I lose quality converting MOV to MP4?",
+      "answer": "Not if the codec inside is H.264 or H.265 and you leave the size target on Original. In that case Convertible does a stream copy: same encoded bits, different container, bit-for-bit identical video. You only lose quality if the source codec can't be carried by MP4 (mainly ProRes), in which case a re-encode is the only option, or if you choose a size target that requires re-encoding to fit a bandwidth limit."
+    },
+    {
+      "question": "Will this work for iPhone screen recordings?",
+      "answer": "Yes, perfectly. iPhone screen recordings are H.264 or H.265 in a MOV container. Convertible stream-copies them into MP4 in seconds, with no quality loss, ready to upload anywhere that wanted MP4 in the first place."
+    },
+    {
+      "question": "What about ProRes MOV files from Final Cut or a cinema camera?",
+      "answer": "Those need a re-encode because ProRes can't live inside an MP4 container. Convertible re-encodes through VideoToolbox using the Apple Silicon hardware encoder, which is significantly faster than software encoding and uses far less battery on a laptop. The default settings target visually-lossless H.265, which gives you a much smaller file than the ProRes original with quality that's indistinguishable in normal viewing. If you're delivering for further editing, keep the ProRes; if you're delivering for playback, the MP4 is what you want."
+    }
+  ]
+}

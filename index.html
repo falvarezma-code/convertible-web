@@ -424,6 +424,64 @@
     .showcase-badge { top: 12px; right: 12px; padding: 6px 11px; font-size: 10px; }
   }
 
+  /* ─── UPCOMING ─── */
+  .upcoming {
+    padding: 24px 0 16px;
+  }
+  .upcoming-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .upcoming-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .upcoming-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .upcoming-title {
+    font-family: var(--f-display);
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 144;
+  }
+  .upcoming-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .upcoming-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .upcoming-card { padding: 24px 22px; }
+  }
+
   /* ─── SECTION DIVIDER ─── */
   .divider {
     display: flex;
@@ -1007,6 +1065,22 @@
   </div>
 </section>
 
+<!-- ─── UPCOMING ─── -->
+<section class="upcoming" aria-label="Coming soon">
+  <div class="container">
+    <div class="upcoming-card">
+      <div class="upcoming-eyebrow">
+        <span class="dot"></span>
+        Shipping soon
+      </div>
+      <h2 class="upcoming-title">Right-click in Finder, with <em>presets you build.</em></h2>
+      <p class="upcoming-text">
+        A Finder extension is on the way. Convert any file directly from the right-click menu, and save your own presets (codec, bitrate, dimensions, output folder) so the conversions you do most are always one click away.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── FEATURES ─── -->
 <section id="features">
   <div class="container">
@@ -1273,7 +1347,7 @@
       <details class="faq-item">
         <summary class="faq-q">Can I right-click a file in Finder to convert it?</summary>
         <div class="faq-a">
-          Not in v1. macOS's sandbox requirements make Finder integration unreliable for App Store apps, so we focused v1 on making drag-and-drop and menu bar access as fast as possible. A simple workflow: drag your file into the app, pick a format, done. We're exploring macOS Shortcuts integration for a future release.
+          Soon. A Finder extension is in active development and will land in an upcoming update. It will let you right-click any file to convert it on the spot, and it will include custom presets you can configure yourself (codec, bitrate, dimensions, output folder) so your most-used conversions are one click away. Until then, drag-and-drop into the app or menu bar is the fastest path.
         </div>
       </details>
 

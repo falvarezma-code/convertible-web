@@ -1,0 +1,39 @@
+{
+  "slug": "compress-pdf-mac",
+  "date": "2026-05-08",
+  "title": "Compress PDFs on Mac without uploading them anywhere.",
+  "meta_title": "Compress PDF on Mac: Local, Private, Email-Ready | Convertible",
+  "meta_description": "Shrink large PDFs on macOS without uploading anything. Convertible compresses contracts, scans, and reports locally so sensitive documents never leave your Mac.",
+  "meta_keywords": "compress pdf mac, reduce pdf size mac, shrink pdf macos, pdf compression mac, pdf for email mac, smaller pdf mac",
+  "category": "Document",
+  "breadcrumb_name": "Compress PDF",
+  "og_title": "Compress PDFs on Mac, Without the Upload",
+  "og_description": "Shrink contracts, scans, and reports on your Mac without sending them to a stranger's server. Local PDF compression that keeps text sharp.",
+  "twitter_title": "Compress PDFs on Mac, Without the Upload",
+  "twitter_description": "Shrink contracts, scans, and reports on your Mac without sending them to a stranger's server. Local PDF compression that keeps text sharp.",
+  "dek": "Most PDF compressors are websites. You upload your contract, your tax return, your medical scan, and trust that the server deletes it after the conversion. Convertible compresses PDFs on your Mac, locally, with results that match the popular online tools but never touch the network.",
+  "index_dek": "Shrink contracts, scans, and reports without sending them to someone else's server. Local PDF compression that keeps text sharp.",
+  "body": "  <p>\n    Drop the PDF into Convertible, choose a compression preset, click Convert. The smaller PDF lands next to the original. The original is untouched. The file never leaves your Mac.\n  </p>\n\n  <h2>How it works, step by step</h2>\n\n  <ol>\n    <li>\n      <strong>Drag the PDF into Convertible.</strong>\n      Single file or batch. Contracts, reports, scans, anything that's bigger than the email cap you're trying to fit under.\n    </li>\n    <li>\n      <strong>Pick a compression preset.</strong>\n      Email (~25 MB target, sharp text, image-heavy pages get more compression), Light (modest reduction, near-lossless for most pages), or Aggressive (smallest file, image quality may drop noticeably on photo-heavy PDFs). The default is Email, which is what most people want most of the time.\n    </li>\n    <li>\n      <strong>Click Convert.</strong>\n      The compressed PDF lands next to the original with a clear filename suffix so you can see at a glance which is which. The original is never modified.\n    </li>\n  </ol>\n\n  <h2>Why most PDF compressors are a privacy problem</h2>\n\n  <p>\n    Search \"compress PDF\" and the top ten results are all websites. They work, they're often genuinely free, and they hand back a smaller PDF in seconds. The trade is that you've uploaded your document to a third-party server. For a vacation itinerary that's fine. For a signed contract, a tax return, a medical record, a legal filing, an NDA, an employment agreement, the trade is much worse, and most people upload anyway because the convenience is real and the consequences are abstract.\n  </p>\n\n  <p>\n    Even if the service is honest about deleting the file after processing (most claim to), you've still routed a sensitive document through someone else's machines, where it sits in logs, queues, caches, and backups for some non-zero amount of time. For most documents that doesn't matter; for the ones that do, it really does. Convertible's pitch is simple: the conversion is local, so the question of whether to trust a third-party server doesn't come up at all.\n  </p>\n\n  <h2>What Convertible does to shrink the file</h2>\n\n  <p>\n    PDF compression isn't one thing, it's a handful of tricks applied together. Convertible re-compresses embedded images using JPEG2000 or efficient JPEG (depending on the page), downsamples high-resolution images to a screen-friendly DPI when they're far above what's actually needed, removes unused fonts and embedded ICC profiles that the document doesn't reference, and re-encodes the PDF stream with stronger compression. Text and vector graphics are left alone, so paragraphs stay sharp, contracts stay legally identical, and signatures stay intact.\n  </p>\n\n  <p>\n    Typical reduction depends a lot on what's in the PDF. A scanned document (which is really a PDF full of large images) often shrinks 70 to 90 percent. A text-heavy report with a few charts shrinks 30 to 50 percent. A pure-text PDF that's already well-compressed might only shrink 10 percent because there's not much fat to cut. Convertible doesn't promise a fixed compression ratio for that reason; it picks sensible settings and shows you the before-and-after size when it's done.\n  </p>\n\n  <p>\n    The honest trade-off: if you need exact control over output DPI, color profile, or per-image quality settings, dedicated PDF tools like PDF Squeezer or Adobe Acrobat Pro give you more knobs. Convertible is built for the case where you have a 40 MB PDF, you need it under 25 MB to send to a client by email, and you'd like the conversion to be fast, local, and not require thinking about settings.\n  </p>\n",
+  "faqs": [
+    {
+      "question": "How much smaller will my PDF be?",
+      "answer": "It depends entirely on what's in the PDF. Scanned documents, which are mostly large embedded images, routinely shrink by 70 to 90 percent (a 50 MB scan often drops to under 10 MB with no visible quality loss). Text-heavy reports with some charts drop by 30 to 50 percent. A small text-only PDF might only drop by 10 percent because there's nothing left to compress. Convertible shows the before-and-after sizes after each conversion so you can see what you got."
+    },
+    {
+      "question": "Will the text stay sharp?",
+      "answer": "Yes. Text in a PDF is stored as vectors with reference to embedded fonts; vectors don't have a resolution to lose. Convertible's compression touches images and PDF stream encoding but leaves text and vector graphics alone. Paragraphs, headings, page numbers, footnotes, and signatures all stay pixel-identical. The result reads exactly as crisply as the original even when zoomed in."
+    },
+    {
+      "question": "Does it work differently for scanned PDFs vs text PDFs?",
+      "answer": "Yes. A scanned PDF is essentially a sequence of images saved in PDF format, so almost all the compression comes from re-compressing those images and downsampling them to a sensible DPI. A text-based PDF has actual text, fonts, and vector content, so the compression is more about cleaning up the PDF stream itself and any embedded images. Convertible detects which case it's in and applies the appropriate settings; you don't have to choose."
+    },
+    {
+      "question": "Will contract signatures and form fields survive?",
+      "answer": "Yes. Both digital signatures (the cryptographic kind) and visual signatures (an image of a handwritten signature) survive compression. Form fields and their data also survive. The PDF structure is preserved; only the underlying data is re-compressed. That said, if you're working with a notarized or court-filed document where bit-for-bit fidelity matters legally, keep the original around as the canonical version and use the compressed copy only for email or convenience."
+    },
+    {
+      "question": "What if the PDF is too large for email even after compression?",
+      "answer": "Try the Aggressive preset, which downsamples images more heavily and accepts slightly visible quality loss on photo-heavy pages. If that's still too large, the document is probably hitting the limits of what compression can do (very high-resolution scans of long documents fall in this bucket) and the practical answer is to share via a link rather than as an attachment. Most cloud storage tools (iCloud Drive, Dropbox, Google Drive) handle this gracefully and don't require the recipient to have an account to download."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "convert-heic-to-jpg-mac",
+  "date": "2026-05-08",
+  "title": "Convert HEIC to JPG on Mac, instantly and free.",
+  "meta_title": "Convert HEIC to JPG on Mac: Free, Local, Instant | Convertible",
+  "meta_description": "Convert HEIC photos from your iPhone to JPG on macOS. No upload, no Pro upgrade, no quality drama. Convertible uses macOS native sips for instant batch conversion.",
+  "meta_keywords": "convert heic to jpg mac, heic to jpg mac, heic converter mac, iphone heic to jpg, batch convert heic, heic to jpeg macos",
+  "category": "Image",
+  "breadcrumb_name": "HEIC to JPG",
+  "og_title": "Convert HEIC to JPG on Mac: Free and Instant",
+  "og_description": "Turn iPhone HEIC photos into JPG locally on your Mac. Free, instant, batch-friendly, with no upload anywhere.",
+  "twitter_title": "Convert HEIC to JPG on Mac: Free and Instant",
+  "twitter_description": "Turn iPhone HEIC photos into JPG locally on your Mac. Free, instant, batch-friendly, with no upload anywhere.",
+  "dek": "Every iPhone since 2017 saves photos as HEIC by default, and a depressing amount of the web still rejects them. Convertible turns HEIC into JPG locally on your Mac, in milliseconds per photo, and this conversion is on the free tier. No upload, no upgrade, no waiting.",
+  "index_dek": "iPhone photos save as HEIC, but most of the web still wants JPG. Convertible converts them locally, instantly, and free.",
+  "body": "  <p>\n    Drop a HEIC file (or a hundred) into Convertible, choose JPG, click Convert. The output lands next to the originals or wherever you drag the result. Nothing leaves your Mac, and HEIC to JPG is on the free tier, so there is no Pro purchase, no watermark, no usage limit.\n  </p>\n\n  <h2>How it works, step by step</h2>\n\n  <ol>\n    <li>\n      <strong>Drag your HEIC photos in.</strong>\n      From Finder, the Photos app export, AirDrop downloads, anywhere. Convertible handles one photo or a batch of several hundred without complaining.\n    </li>\n    <li>\n      <strong>Pick JPG as the output format.</strong>\n      Each file has its own format dropdown. Defaults are sensible; if you have HEICs and PNGs in the same batch you can target each to a different format.\n    </li>\n    <li>\n      <strong>Optional: pick a quality preset.</strong>\n      Web (smaller, still sharp), Print (near-lossless), or Original. Most people leave it on the default and never look back.\n    </li>\n    <li>\n      <strong>Click Convert.</strong>\n      The JPGs appear next to the originals. Photos never leave the Mac, and the originals are never modified.\n    </li>\n  </ol>\n\n  <h2>Why HEIC keeps tripping people up</h2>\n\n  <p>\n    HEIC is technically excellent. Roughly half the file size of JPG at the same visible quality, support for transparency, support for image sequences. The catch: it is an Apple default that the rest of the world only half-supports. Upload a HEIC to a job application portal and it might bounce. Drag one into a Windows machine and you get a dialog asking you to buy a codec. Email a HEIC to a colleague on Outlook and they can't open the attachment. None of that is your fault, but you still need a JPG.\n  </p>\n\n  <p>\n    Apple's own answer is to silently convert HEIC to JPG when you share, but only sometimes, and only through specific paths (Mail attachments, AirDrop to non-Apple devices, Photos sharing). The moment you step outside that narrow path (drag a photo out of Photos to the Desktop, export a folder of originals, save from a message thread) you get the raw HEIC back, and you're stuck again.\n  </p>\n\n  <h2>What Convertible actually does</h2>\n\n  <p>\n    macOS already ships a great HEIC decoder as part of Image I/O, exposed through the system tool sips. Convertible uses that exact decoder, which means the HEIC is decoded the same way Photos and Preview decode it: full color, full resolution, EXIF metadata preserved (date taken, GPS, camera, lens). The JPG encoder is the system encoder too, so the result behaves identically to a JPG exported from Preview or Photos.\n  </p>\n\n  <p>\n    Because all of this happens locally and in parallel, a batch of 200 iPhone photos converts in a few seconds on any Apple Silicon Mac. There is no upload step, no queue, no daily limit, no \"upgrade for batch mode\" prompt. The free tier covers it because the work is genuinely cheap on your hardware, and we'd rather you trust us with photos than meter you on something this small.\n  </p>\n\n  <p>\n    The honest trade-off: HEIC files are about half the size of equivalent JPGs, so a 200-photo batch will roughly double on disk. If storage is tight, keep the HEIC originals and only convert the ones you need to send out.\n  </p>\n",
+  "faqs": [
+    {
+      "question": "Why are my iPhone photos HEIC in the first place?",
+      "answer": "Apple switched the default photo format from JPG to HEIC starting with iOS 11 in 2017, on iPhone 7 and later. HEIC compresses about twice as efficiently as JPG at the same visible quality, which is great for storage and iCloud uploads. The trade-off is that HEIC is not universally supported outside Apple devices, so anything you send to the broader web often needs to be a JPG. You can switch the camera back to JPG in Settings → Camera → Formats → Most Compatible, but most people don't and shouldn't, the storage savings are real."
+    },
+    {
+      "question": "Will I lose quality converting HEIC to JPG?",
+      "answer": "There is some quality loss because JPG is a less efficient codec, but for any reasonable quality setting it is invisible to the eye. Convertible uses Apple's system encoder with a sensible default that aims for a near-lossless result. If you need archival fidelity, keep the HEIC original; for everything else (web upload, email, printing, social media) the JPG is indistinguishable from what came out of Photos."
+    },
+    {
+      "question": "Can I batch convert hundreds of HEIC files at once?",
+      "answer": "Yes, on the free tier, with no limit. Convertible converts in parallel using all available CPU cores, so a batch of 500 photos finishes in well under a minute on an Apple Silicon Mac. There is no \"upgrade for batch mode\" gate, this conversion is genuinely cheap on your hardware and we don't meter it."
+    },
+    {
+      "question": "Does this cost anything?",
+      "answer": "No. HEIC to JPG (and a handful of other common image conversions like WebP to PNG) is on Convertible's free tier. You can use it as much as you like without buying the app. The Pro upgrade exists for video and PDF work, where the conversions are heavier and the value is higher; image conversions are free because they should be."
+    },
+    {
+      "question": "Will EXIF data (date, location, camera) survive the conversion?",
+      "answer": "Yes. EXIF metadata is preserved by default, so the JPG keeps the date taken, GPS location, camera and lens info, and orientation. If you want to strip metadata for privacy before sharing (location is the common one), there is a toggle for that. The original HEIC is never modified."
+    }
+  ]
+}

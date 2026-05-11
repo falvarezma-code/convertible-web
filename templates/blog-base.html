@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Primary SEO -->
-<title>Blog | Convertible</title>
-<meta name="description" content="Guides and notes from the team behind Convertible, a privacy-first file converter for macOS." />
+<title>{{META_TITLE}}</title>
+<meta name="description" content="{{META_DESCRIPTION}}" />
+<meta name="keywords" content="{{META_KEYWORDS}}" />
 <meta name="author" content="Convertible" />
-<link rel="canonical" href="https://getconvertible.app/blog.html" />
+<link rel="canonical" href="{{CANONICAL_URL}}" />
 
 <!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://getconvertible.app/blog.html" />
-<meta property="og:title" content="Blog | Convertible" />
-<meta property="og:description" content="Guides and notes from the team behind Convertible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{CANONICAL_URL}}" />
+<meta property="og:title" content="{{OG_TITLE}}" />
+<meta property="og:description" content="{{OG_DESCRIPTION}}" />
 <meta property="og:image" content="https://getconvertible.app/assets/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -22,13 +23,43 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Blog | Convertible" />
-<meta name="twitter:description" content="Guides and notes from the team behind Convertible." />
+<meta name="twitter:title" content="{{TWITTER_TITLE}}" />
+<meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}" />
 <meta name="twitter:image" content="https://getconvertible.app/assets/images/og-image.png" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/images/convertible-logo.png" />
 <link rel="apple-touch-icon" href="/assets/images/convertible-logo.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Convertible",
+  "operatingSystem": "macOS 14+",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD"
+  },
+  "description": "Privacy-first file converter for macOS. Convert images, video, audio, and PDFs locally without uploading anything.",
+  "url": "https://getconvertible.app"
+}
+</script>
+
+<script type="application/ld+json">
+{{BREADCRUMB_SCHEMA}}
+</script>
+
+<script type="application/ld+json">
+{{ARTICLE_SCHEMA}}
+</script>
+
+<script type="application/ld+json">
+{{FAQ_SCHEMA}}
+</script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -181,95 +212,144 @@
     .nav-links a:not(.btn) { display: none; }
   }
 
-  /* ─── PAGE ─── */
-  .page {
+  /* ─── ARTICLE ─── */
+  article {
     max-width: 680px;
     margin: 0 auto;
     padding: 56px 24px 24px;
   }
 
-  .page-eyebrow {
-    font-family: var(--f-mono);
-    font-size: 13px;
+  .article-meta {
+    font-size: 14px;
     color: var(--ink-muted);
-    letter-spacing: 0.02em;
-    margin-bottom: 16px;
+    margin-bottom: 28px;
   }
+  .article-meta a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .article-meta a:hover { color: var(--ink); }
+  .article-meta span { margin: 0 8px; opacity: 0.6; }
 
-  .page h1 {
+  article h1 {
     font-family: var(--f-display);
     font-size: 40px;
     font-weight: 600;
     line-height: 1.18;
     letter-spacing: -0.02em;
     color: var(--ink);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-variation-settings: "opsz" 40;
   }
 
-  .page-dek {
-    font-size: 19px;
+  .dek {
+    font-size: 21px;
     line-height: 1.5;
     color: var(--ink-soft);
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
 
-  /* ─── POST LIST ─── */
-  .post-category {
+  /* ─── INLINE VIDEO ─── */
+  .article-video {
+    margin: 8px auto 40px;
+    max-width: 480px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #000;
+    box-shadow:
+      0 24px 60px -24px rgba(0,0,0,0.35),
+      0 2px 6px -2px rgba(0,0,0,0.10);
+  }
+  .article-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .article-video figcaption {
     font-family: var(--f-mono);
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
     color: var(--ink-muted);
-    margin: 40px 0 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--line);
+    padding: 11px 14px;
+    background: var(--bg);
+    border-top: 1px solid var(--line-soft);
+  }
+  @media (prefers-color-scheme: dark) {
+    .article-video figcaption { background: var(--bg); }
   }
 
-  .post-category:first-of-type {
-    margin-top: 0;
-  }
-
-  .post-list {
-    list-style: none;
-  }
-
-  .post-list li {
-    border-bottom: 1px solid var(--line-soft);
-  }
-
-  .post-list a {
-    display: block;
-    padding: 20px 0;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.15s ease;
-  }
-
-  .post-list a:hover {
-    transform: translateX(4px);
-  }
-
-  .post-title {
+  article h2 {
     font-family: var(--f-display);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 6px;
-    font-variation-settings: "opsz" 24;
+    margin: 48px 0 16px;
+    font-variation-settings: "opsz" 28;
   }
 
-  .post-list a:hover .post-title {
+  article h3 {
+    font-family: var(--f-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 36px 0 12px;
+    font-variation-settings: "opsz" 22;
+  }
+
+  article p {
+    margin-bottom: 24px;
+  }
+  article p:last-child { margin-bottom: 0; }
+
+  article a {
     color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
-  .post-dek {
-    font-size: 16px;
-    line-height: 1.5;
+  article ol, article ul {
+    margin: 0 0 24px 24px;
+    padding: 0;
+  }
+
+  article li {
+    margin-bottom: 14px;
+    padding-left: 6px;
+  }
+  article li:last-child { margin-bottom: 0; }
+  article li strong {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  article strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ─── CTA AT END ─── */
+  .cta-end {
+    margin: 56px 0 8px;
+    padding: 28px 28px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 17px;
     color: var(--ink-soft);
+  }
+  .cta-end a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta-end a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   /* ─── FOOTER ─── */
@@ -327,63 +407,27 @@
   </div>
 </nav>
 
-<!-- ─── PAGE ─── -->
-<section class="page">
-  <div class="page-eyebrow">Blog</div>
-  <h1>Notes from the workshop.</h1>
-  <p class="page-dek">
-    Short guides on file formats, the macOS quirks we run into, and why Convertible handles things the way it does.
-  </p>
+<!-- ─── ARTICLE ─── -->
+<article>
+  <div class="article-meta">
+    <a href="/">Home</a><span>/</span><a href="/blog.html">Blog</a><span>/</span>{{BREADCRUMB_NAME}}
+  </div>
 
-    <h2 class="post-category">Image</h2>
-    <ul class="post-list">
-      <li>
-        <a href="/convert-heic-to-jpg-mac.html">
-          <div class="post-title">Convert HEIC to JPG on Mac, instantly and free.</div>
-          <div class="post-dek">iPhone photos save as HEIC, but most of the web still wants JPG. Convertible converts them locally, instantly, and free.</div>
-        </a>
-      </li>
-      <li>
-        <a href="/convert-webp-to-png-mac.html">
-          <div class="post-title">Convert WebP to PNG on Mac, free and lossless.</div>
-          <div class="post-dek">WebP is everywhere on the web, but lots of design tools still don't open it. Convertible turns it into PNG locally, lossless, free.</div>
-        </a>
-      </li>
-    </ul>
-    <h2 class="post-category">Video</h2>
-    <ul class="post-list">
-      <li>
-        <a href="/convert-mov-to-mp4-mac.html">
-          <div class="post-title">Convert MOV to MP4 on Mac, without re-encoding when you don't have to.</div>
-          <div class="post-dek">Most MOV files are MP4 underneath. Convertible swaps the wrapper locally with no quality loss, and only re-encodes when it has to.</div>
-        </a>
-      </li>
-      <li>
-        <a href="/convert-mkv-to-mp4-mac.html">
-          <div class="post-title">Convert MKV to MP4 on Mac, without handing the file over.</div>
-          <div class="post-dek">MKV is a container Apple has never supported. Most MKV files already contain video your Mac could play, the wrapper is the only real problem.</div>
-        </a>
-      </li>
-    </ul>
-    <h2 class="post-category">Audio</h2>
-    <ul class="post-list">
-      <li>
-        <a href="/convert-mp4-to-mp3-mac.html">
-          <div class="post-title">Convert MP4 to MP3 on Mac, audio-only in seconds.</div>
-          <div class="post-dek">Pull the audio out of any MP4 video. Lectures, podcasts, meeting recordings, ready for listening or transcription, all done locally.</div>
-        </a>
-      </li>
-    </ul>
-    <h2 class="post-category">Document</h2>
-    <ul class="post-list">
-      <li>
-        <a href="/compress-pdf-mac.html">
-          <div class="post-title">Compress PDFs on Mac without uploading them anywhere.</div>
-          <div class="post-dek">Shrink contracts, scans, and reports without sending them to someone else's server. Local PDF compression that keeps text sharp.</div>
-        </a>
-      </li>
-    </ul>
-</section>
+  <h1>{{TITLE}}</h1>
+
+  <p class="dek">
+    {{DEK}}
+  </p>
+{{VIDEO_FIGURE}}
+{{BODY}}
+
+  <h2>Frequently asked questions</h2>
+{{FAQ_SECTION}}
+
+  <div class="cta-end">
+    Convertible · $9.99 on the <a href="https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12" target="_blank" rel="noopener">Mac App Store</a>
+  </div>
+</article>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -399,6 +443,16 @@
     </ul>
   </div>
 </footer>
+
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
+    });
+  }
+</script>
 
 </body>
 </html>

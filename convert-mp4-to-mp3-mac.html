@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Primary SEO -->
-<title>Convert MKV to MP4 on Mac: No Upload | Convertible</title>
-<meta name="description" content="Convert MKV to MP4 on your Mac without uploading anything. Convertible runs locally, keeps H.264/H.265 quality intact, and handles files of any size. $9.99." />
-<meta name="keywords" content="convert mkv to mp4 mac, mkv to mp4 mac, mkv converter mac, open mkv mac, mkv quicktime, mac mkv to mp4 local" />
+<title>Convert MP4 to MP3 on Mac: Extract Audio Locally | Convertible</title>
+<meta name="description" content="Extract MP3 audio from any MP4 video on macOS without uploading anything. Convertible runs locally, sensible bitrate defaults, ready for podcasts, lectures, or transcription." />
+<meta name="keywords" content="convert mp4 to mp3 mac, extract audio mp4 mac, mp4 to mp3 mac, video to mp3 mac, audio extraction macos, mp4 audio only" />
 <meta name="author" content="Convertible" />
-<link rel="canonical" href="https://getconvertible.app/convert-mkv-to-mp4-mac.html" />
+<link rel="canonical" href="https://getconvertible.app/convert-mp4-to-mp3-mac.html" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://getconvertible.app/convert-mkv-to-mp4-mac.html" />
-<meta property="og:title" content="Convert MKV to MP4 on Mac: No Upload" />
-<meta property="og:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
+<meta property="og:url" content="https://getconvertible.app/convert-mp4-to-mp3-mac.html" />
+<meta property="og:title" content="Convert MP4 to MP3 on Mac: Extract Audio Locally" />
+<meta property="og:description" content="Pull the audio out of any MP4 video on your Mac, locally and quickly. Sensible defaults, ready for podcasts, lectures, or transcription." />
 <meta property="og:image" content="https://getconvertible.app/assets/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -23,8 +23,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Convert MKV to MP4 on Mac: No Upload" />
-<meta name="twitter:description" content="The local way to turn MKV files into MP4 on macOS. No cloud, no re-encode when you don't need one, no size cap." />
+<meta name="twitter:title" content="Convert MP4 to MP3 on Mac: Extract Audio Locally" />
+<meta name="twitter:description" content="Pull the audio out of any MP4 video on your Mac, locally and quickly. Sensible defaults, ready for podcasts, lectures, or transcription." />
 <meta name="twitter:image" content="https://getconvertible.app/assets/images/og-image.png" />
 
 <!-- Favicon -->
@@ -69,8 +69,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "MKV to MP4",
-      "item": "https://getconvertible.app/convert-mkv-to-mp4-mac.html"
+      "name": "MP4 to MP3",
+      "item": "https://getconvertible.app/convert-mp4-to-mp3-mac.html"
     }
   ]
 }
@@ -80,10 +80,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Convert MKV to MP4 on Mac, without handing the file over.",
-  "description": "Convert MKV to MP4 on your Mac without uploading anything. Convertible runs locally, keeps H.264/H.265 quality intact, and handles files of any size. $9.99.",
-  "datePublished": "2026-04-22",
-  "dateModified": "2026-04-22",
+  "headline": "Convert MP4 to MP3 on Mac, audio-only in seconds.",
+  "description": "Extract MP3 audio from any MP4 video on macOS without uploading anything. Convertible runs locally, sensible bitrate defaults, ready for podcasts, lectures, or transcription.",
+  "datePublished": "2026-05-08",
+  "dateModified": "2026-05-08",
   "author": {
     "@type": "Organization",
     "name": "Convertible"
@@ -98,7 +98,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://getconvertible.app/convert-mkv-to-mp4-mac.html"
+    "@id": "https://getconvertible.app/convert-mp4-to-mp3-mac.html"
   },
   "image": "https://getconvertible.app/assets/images/og-image.png"
 }
@@ -111,42 +111,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Will I lose quality converting MKV to MP4?",
+      "name": "Can I extract just part of the audio from a long video?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not if the video inside is H.264 or H.265, which covers most MKV files. Convertible copies the existing video and audio streams into an MP4 container without re-encoding, so every frame and every sample is preserved bit-for-bit. The output file size will be nearly identical to the original. Quality loss only happens if the MKV contains a codec MP4 can't carry, in which case a re-encode is unavoidable."
+        "text": "Not in v1, the conversion is whole-file. If you need a clip from a longer recording, the cleanest workflow today is to convert the full file to MP3 and then trim the MP3 in QuickTime Player (which can trim audio files just as easily as video). Per-file timecode trimming is on the roadmap, but for now whole-file extraction is what we ship."
       }
     },
     {
       "@type": "Question",
-      "name": "Why doesn't QuickTime open MKV files in the first place?",
+      "name": "What bitrate should I pick?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Apple has never shipped an MKV demuxer in macOS. QuickTime, Preview, iMovie, and Final Cut all rely on Core Media, which supports MP4, MOV, and M4V among others, but not Matroska. No plugin fixes this system-wide. The practical workaround is to convert the file once, keep the MP4, and everything Apple makes will open it normally."
+        "text": "For speech (lectures, podcasts, meetings, interviews), 96 to 128 kbps is more than enough; the Voice preset uses 128 kbps. For music or anything where audio quality matters, 192 to 256 kbps gives a result that's effectively transparent for most listeners; the Music preset uses 192 kbps. Going above 256 kbps in MP3 is rarely worth it; if you want true high-fidelity audio you should be using AAC or a lossless format, not MP3."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens to subtitles and multiple audio tracks?",
+      "name": "MP3 vs AAC, which is better?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The primary audio track is preserved as-is, copied into the MP4 container with no re-encoding, so there's no quality loss. Secondary audio tracks (second-language dubs, director commentary) are dropped in v1. Subtitles are also dropped, including SRT and PGS. If multi-track audio or embedded subtitles matter for your file, HandBrake is still the better tool for now, and we're looking at adding explicit track mapping in a later release."
+        "text": "AAC is technically better. At the same bitrate it sounds noticeably cleaner, especially for music and at lower bitrates. The reason MP3 is still the default for things like \"send me the audio\" is universal compatibility: every device, app, browser, and operating system from the last twenty years can play MP3, while AAC support is broad but not quite universal. If you control the playback path (your own listening, a tool you've already tested), pick AAC. If you're sending the file to someone else, pick MP3."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does a 5 GB MKV take to convert?",
+      "name": "Will the audio be clear enough for transcription?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If the video is H.264 or H.265 (almost always the case) Convertible does a stream copy, which is effectively limited by disk I/O rather than CPU. On an Apple Silicon Mac with an internal SSD, expect roughly the time it takes to read and write the file once. If the codec is old enough to force a re-encode, timing lands in the usual video-encoding range, somewhere between half and a few times real-time depending on your Mac."
+        "text": "Yes. Whisper-based transcription (MacWhisper, OpenAI Whisper, Aiko) doesn't need high-fidelity audio. It needs intelligible speech, and 128 kbps MP3 (or even lower) is more than enough. If you're going straight to transcription, you can use the Voice preset or even drop to 64 kbps mono and the transcript quality will be the same. The bottleneck is the recording, not the encoding."
       }
     },
     {
       "@type": "Question",
-      "name": "Will the converted MP4 play in iMovie, Final Cut, and Photos?",
+      "name": "What about other video formats: MOV, MKV, WebM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. An MP4 with H.264 or H.265 video is the native format Apple's tools are built around. Once the container is MP4, iMovie will import it, Final Cut will let you drag it onto the timeline, and Photos will accept it into your library. You can also AirDrop it straight to an iPhone with no further conversion."
+        "text": "All of them work the same way. Convertible reads the audio track out of any video container it supports (MP4, MOV, MKV, WebM, AVI, M4V, plus more) and writes MP3. The video codec inside is irrelevant; only the audio track is touched."
       }
     }
   ]
@@ -502,96 +502,85 @@
 <!-- ─── ARTICLE ─── -->
 <article>
   <div class="article-meta">
-    <a href="/">Home</a><span>/</span><a href="/blog.html">Blog</a><span>/</span>MKV to MP4
+    <a href="/">Home</a><span>/</span><a href="/blog.html">Blog</a><span>/</span>MP4 to MP3
   </div>
 
-  <h1>Convert MKV to MP4 on Mac, without handing the file over.</h1>
+  <h1>Convert MP4 to MP3 on Mac, audio-only in seconds.</h1>
 
   <p class="dek">
-    MKV is a container Apple has never supported. Most MKV files already contain video your Mac could play, the wrapper is the only real problem. Convertible rewrites the container locally, usually in seconds, and keeps the quality exactly where it was.
+    Sometimes you only want the audio. A two-hour lecture, a podcast you grabbed as video, a meeting recording you need to feed into a transcription tool. Convertible pulls the audio out of any MP4 locally on your Mac, encodes it to MP3 at a sensible bitrate, and never sends the file anywhere.
   </p>
 
-  <figure class="article-video">
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="/assets/video/vacation-4k-footage-poster.jpg"
-           width="1700" height="1032">
-      <source src="/assets/video/vacation-4k-footage.mp4" type="video/mp4" />
-    </video>
-    <figcaption>
-      A 4K vacation clip. The video inside is already H.264, so QuickTime could play it. The MKV wrapper is the only thing keeping it locked out. Convertible swaps the wrapper for MP4 in seconds, on your Mac, without touching a single pixel.
-    </figcaption>
-  </figure>
-
   <p>
-    Drop the MKV into Convertible, choose MP4 from the format dropdown, click Convert. If the MKV uses H.264 or H.265 video (which it almost certainly does) the app remuxes the stream into MP4 without re-encoding. Same picture, same audio, same size, in a file iMovie and QuickTime will actually open.
+    Drop the MP4 into Convertible, choose MP3, click Convert. The audio track is extracted and encoded to MP3 with a sensible default bitrate. The original video file is untouched. Files never leave your Mac.
   </p>
 
   <h2>How it works, step by step</h2>
 
   <ol>
     <li>
-      <strong>Drop the MKV into Convertible.</strong>
-      From Finder, the Desktop, a Safari download, or a folder somewhere else. The app accepts one file or a hundred.
+      <strong>Drop the MP4 (or batch of MP4s) into Convertible.</strong>
+      Lecture recordings, podcast video versions, Zoom exports, screen captures with audio. Anything with an audio track works.
     </li>
     <li>
-      <strong>Pick MP4 as the output format.</strong>
-      Each file has its own format dropdown. Defaults are sensible; you can change one without changing the others.
+      <strong>Pick MP3 as the output format.</strong>
+      If you'd rather have AAC (smaller at the same quality, broadly compatible), WAV (uncompressed, for editing), or M4A (Apple's container, lossless option available), they're one click away in the same dropdown.
     </li>
     <li>
-      <strong>Optional: choose a size target.</strong>
-      If you need to fit the MP4 into a message or upload, pick Email (≤25 MB), Discord (≤10 MB), iMessage (≤100 MB), or WhatsApp (≤16 MB). Leave it on Original to keep the source bitrate.
+      <strong>Optional: pick a quality preset.</strong>
+      Voice (lower bitrate, perfect for lectures and podcasts), Music (higher bitrate, full frequency range), or Original (matches whatever bitrate the source audio was). The Voice preset gives you noticeably smaller files for content that's mostly speech.
     </li>
     <li>
       <strong>Click Convert.</strong>
-      The MP4 lands next to the original, or wherever you drag the output icon. Your files never leave the Mac.
+      The MP3 lands next to the original. A two-hour lecture comes out in well under a minute on Apple Silicon.
     </li>
   </ol>
 
-  <h2>Why the built-in tools don't help</h2>
+  <h2>Why audio extraction from video is awkward</h2>
 
   <p>
-    QuickTime Player won't open MKV files. Neither will Preview, iMovie, Final Cut, or Photos. Apple's Core Media framework has never shipped a Matroska demuxer, and there's no public roadmap suggesting that will change. Double-clicking an MKV on a fresh Mac gets you a "QuickTime Player can't open this file" dialog and nothing else.
+    macOS doesn't ship a built-in tool for this. QuickTime Player can export audio-only, but only as an M4A (AAC) file, and only if you go through File → Export As → Audio Only. It works, but it's three menu levels deep, doesn't batch, and the output is AAC even when you wanted MP3 specifically (and a lot of older transcription tools and audio editors still want MP3).
   </p>
 
   <p>
-    VLC handles playback, and in theory it can re-wrap an MKV to MP4 through File → Convert / Stream. In practice that dialog is built for a different decade, and its default profiles re-encode the video even when they don't have to, so you wait twenty minutes and end up with a file that's slightly worse than the original. HandBrake is honest about what it does: it always re-encodes. That's useful when you actually want to shrink a file, but it's the wrong tool if your MKV is already H.264 and you just need the container swapped.
+    Online MP4-to-MP3 converters work too, but you're uploading what is often a large video file (hundreds of megabytes for a lecture, gigabytes for an HD recording) over a slow connection just to get back a much smaller MP3. And if the source is sensitive (a meeting recording, a lecture you paid to attend, an interview with a source) handing it to a third-party server is a worse trade than just running the conversion locally.
   </p>
 
-  <h2>It changes the wrapper, not the picture</h2>
+  <h2>How Convertible handles it</h2>
 
   <p>
-    Most MKV files on the web are H.264 or H.265 inside a Matroska wrapper. MP4 supports both codecs natively, which means there is nothing in the video to actually convert. The pixels can stay exactly as they are, and only the container has to change. Convertible attempts a stream copy first, and for the typical H.264/H.265 MKV that succeeds, so a two-hour 4K MKV becomes a two-hour 4K MP4 at roughly the speed your SSD can read and write. If the codec inside turns out to be incompatible with MP4, the app falls back to a hardware-accelerated re-encode through VideoToolbox.
-  </p>
-
-  <p>
-    MKV files also tend to be large. Multi-gigabyte is the norm for anything at 1080p or above. Online converters leave you with two options: wait an hour uploading a 6 GB file to someone else's server on a residential connection, or pay for a plan that lifts the size cap. Convertible doesn't care how big the file is, it never leaves the Mac. The only upper bound is free disk space.
+    Convertible uses ffmpeg under the hood, called locally with your Mac's hardware. For MP3 specifically the audio is decoded from whatever codec the MP4 used (almost always AAC) and re-encoded to MP3 at the bitrate you picked. There is one decode and one encode, both done in memory, both fast on Apple Silicon. A two-hour 1080p MP4 produces a roughly 30 to 60 MB MP3 in under a minute, depending on bitrate and your Mac.
   </p>
 
   <p>
-    The honest trade-off: if you need heavy re-encoding work, custom CRF values, two-pass encoding, fine-grained filter chains, HandBrake's preset library is still better than Convertible's. Convertible is built for the other 90% of the time, when you just want the file to open in QuickTime and get on with your day.
+    The output is also a clean handoff into transcription tools. Pair Convertible with MacWhisper (or any local Whisper-based transcriber): drag your meeting MP4 into Convertible, get an MP3, drop it into MacWhisper, get a transcript. The whole loop is local, which matters for the kinds of recordings you'd actually want to transcribe in the first place. AAC works for MacWhisper too, so if you're going straight to transcription M4A is slightly higher quality at the same file size.
+  </p>
+
+  <p>
+    The honest trade-off: MP3 is an aging codec. It's universally supported, which is why we default to it, but at the same bitrate AAC sounds slightly better and Opus sounds noticeably better. If you control what plays the file, AAC or Opus are technically the right call; if you're sending the file to someone else's tool that you don't control, MP3 is the safest bet.
   </p>
 
 
   <h2>Frequently asked questions</h2>
-  <h3>Will I lose quality converting MKV to MP4?</h3>
+  <h3>Can I extract just part of the audio from a long video?</h3>
   <p>
-    Not if the video inside is H.264 or H.265, which covers most MKV files. Convertible copies the existing video and audio streams into an MP4 container without re-encoding, so every frame and every sample is preserved bit-for-bit. The output file size will be nearly identical to the original. Quality loss only happens if the MKV contains a codec MP4 can't carry, in which case a re-encode is unavoidable.
+    Not in v1, the conversion is whole-file. If you need a clip from a longer recording, the cleanest workflow today is to convert the full file to MP3 and then trim the MP3 in QuickTime Player (which can trim audio files just as easily as video). Per-file timecode trimming is on the roadmap, but for now whole-file extraction is what we ship.
   </p>
-  <h3>Why doesn't QuickTime open MKV files in the first place?</h3>
+  <h3>What bitrate should I pick?</h3>
   <p>
-    Apple has never shipped an MKV demuxer in macOS. QuickTime, Preview, iMovie, and Final Cut all rely on Core Media, which supports MP4, MOV, and M4V among others, but not Matroska. No plugin fixes this system-wide. The practical workaround is to convert the file once, keep the MP4, and everything Apple makes will open it normally.
+    For speech (lectures, podcasts, meetings, interviews), 96 to 128 kbps is more than enough; the Voice preset uses 128 kbps. For music or anything where audio quality matters, 192 to 256 kbps gives a result that's effectively transparent for most listeners; the Music preset uses 192 kbps. Going above 256 kbps in MP3 is rarely worth it; if you want true high-fidelity audio you should be using AAC or a lossless format, not MP3.
   </p>
-  <h3>What happens to subtitles and multiple audio tracks?</h3>
+  <h3>MP3 vs AAC, which is better?</h3>
   <p>
-    The primary audio track is preserved as-is, copied into the MP4 container with no re-encoding, so there's no quality loss. Secondary audio tracks (second-language dubs, director commentary) are dropped in v1. Subtitles are also dropped, including SRT and PGS. If multi-track audio or embedded subtitles matter for your file, HandBrake is still the better tool for now, and we're looking at adding explicit track mapping in a later release.
+    AAC is technically better. At the same bitrate it sounds noticeably cleaner, especially for music and at lower bitrates. The reason MP3 is still the default for things like "send me the audio" is universal compatibility: every device, app, browser, and operating system from the last twenty years can play MP3, while AAC support is broad but not quite universal. If you control the playback path (your own listening, a tool you've already tested), pick AAC. If you're sending the file to someone else, pick MP3.
   </p>
-  <h3>How long does a 5 GB MKV take to convert?</h3>
+  <h3>Will the audio be clear enough for transcription?</h3>
   <p>
-    If the video is H.264 or H.265 (almost always the case) Convertible does a stream copy, which is effectively limited by disk I/O rather than CPU. On an Apple Silicon Mac with an internal SSD, expect roughly the time it takes to read and write the file once. If the codec is old enough to force a re-encode, timing lands in the usual video-encoding range, somewhere between half and a few times real-time depending on your Mac.
+    Yes. Whisper-based transcription (MacWhisper, OpenAI Whisper, Aiko) doesn't need high-fidelity audio. It needs intelligible speech, and 128 kbps MP3 (or even lower) is more than enough. If you're going straight to transcription, you can use the Voice preset or even drop to 64 kbps mono and the transcript quality will be the same. The bottleneck is the recording, not the encoding.
   </p>
-  <h3>Will the converted MP4 play in iMovie, Final Cut, and Photos?</h3>
+  <h3>What about other video formats: MOV, MKV, WebM?</h3>
   <p>
-    Yes. An MP4 with H.264 or H.265 video is the native format Apple's tools are built around. Once the container is MP4, iMovie will import it, Final Cut will let you drag it onto the timeline, and Photos will accept it into your library. You can also AirDrop it straight to an iPhone with no further conversion.
+    All of them work the same way. Convertible reads the audio track out of any video container it supports (MP4, MOV, MKV, WebM, AVI, M4V, plus more) and writes MP3. The video codec inside is irrelevant; only the audio track is touched.
   </p>
 
   <div class="cta-end">
