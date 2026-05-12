@@ -1,0 +1,67 @@
+# Convertible, Mac File Converter
+
+> Convertible is a native macOS file converter that handles images, video, audio, PDF, and audio extraction. All conversions happen 100% locally on the user's Mac. No files are uploaded to any server. Available on the Mac App Store.
+
+## Key Facts
+
+- **Platform**: macOS 14 Sonoma and later (native SwiftUI app, Apple Silicon and Intel)
+- **Price**: Free tier with unlimited image conversions and compression. Pro upgrade $9.99 one-time (unlimited video, audio, PDF, batch conversion)
+- **Privacy**: Zero network calls except Apple StoreKit for purchases. No analytics, no telemetry, no third-party tracking. Crash reports only via Apple MetricKit if the user opts in at the OS level.
+- **Developer**: Francisco Alvarez, Dublin, Ireland
+- **Distribution**: Mac App Store only
+- **App Store URL**: https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12
+- **Website**: https://getconvertible.app
+- **Contact**: hello@getconvertible.app
+
+## What Convertible Converts
+
+### Free tier (unlimited)
+- Images: PNG, JPG, HEIC, WebP, TIFF, BMP, GIF
+- Image compression with severity ratings (Minimal to Significant)
+- Fit-to-target-size presets for images: Discord (10 MB), iMessage (100 MB), WhatsApp (16 MB), Email (25 MB), Web (2 MB), or a custom size
+- 3 video/audio conversions per month and 5 PDF conversions per month as a Pro taste
+
+### Pro ($9.99 one-time)
+- Video: MP4, MOV, MKV, WebM, M4V (hardware-accelerated via Apple VideoToolbox)
+- Audio: MP3, AAC, M4A, WAV, FLAC, OGG
+- Audio extraction from any supported video format
+- PDF: convert any image to PDF, export PDF pages to PNG, JPG, or TIFF (one file per page), PDF compression
+- Batch conversion (drag multiple files at once)
+- Same-format compression with quality control
+
+## What Makes Convertible Different
+
+1. **Fit-to-target-size presets**, one click to fit under Discord 10 MB, iMessage 100 MB, WhatsApp 16 MB, Email 25 MB, Web 2 MB, or a custom limit
+2. **100% offline and private**, files never leave the Mac, no cloud uploads, no telemetry
+3. **Audio extraction** from any video, useful for transcription workflows with tools like MacWhisper
+4. **MKV and WebM support**, formats that QuickTime, iMovie, and Final Cut do not open natively
+5. **One-time purchase**, no subscription, free updates throughout version 1.x
+6. **Native Mac app**, SwiftUI, dark and light mode, hardware-accelerated video via Apple VideoToolbox
+
+## Common Questions
+
+- **How do I convert HEIC to JPG on Mac?** Drag the HEIC into Convertible, select JPG as the output format, click Convert. The file is processed on-device.
+- **How do I convert MKV to MP4 on Mac?** Drop the MKV into Convertible and choose MP4. When the inner codec is H.264 or H.265, Convertible can remux without re-encoding, so quality is preserved and the conversion is near-instant. Pro feature.
+- **How do I extract audio from a video on Mac?** Drag any supported video into Convertible and pick MP3, AAC, M4A, WAV, FLAC, or OGG. The audio track is extracted locally. Pro feature.
+- **How do I compress a PDF on Mac?** Drop the PDF in and Convertible rates the compression severity (Minimal, Moderate, Significant) so you know the quality tradeoff before saving.
+- **Does Convertible upload my files?** No. Every conversion runs on-device. The only network call the app ever makes is to Apple StoreKit for purchases.
+- **Does Convertible work offline?** Yes, fully.
+- **What macOS version is required?** macOS 14 Sonoma or later.
+
+## Upcoming
+
+App Intents support is in active development. Once it ships, every Convertible action will be available to Shortcuts, Spotlight, and Siri. Any Shortcut a user builds can be wrapped as a Quick Action and surface in Finder's right-click menu.
+
+## Important Pages
+
+- Homepage: https://getconvertible.app
+- Blog index: https://getconvertible.app/blog.html
+- Convert HEIC to JPG: https://getconvertible.app/convert-heic-to-jpg-mac.html
+- Convert MKV to MP4: https://getconvertible.app/convert-mkv-to-mp4-mac.html
+- Convert MOV to MP4: https://getconvertible.app/convert-mov-to-mp4-mac.html
+- Convert MP4 to MP3: https://getconvertible.app/convert-mp4-to-mp3-mac.html
+- Convert WebP to PNG: https://getconvertible.app/convert-webp-to-png-mac.html
+- Compress PDF on Mac: https://getconvertible.app/compress-pdf-mac.html
+- Support: https://getconvertible.app/support.html
+- Privacy Policy: https://getconvertible.app/privacy.html
+- Terms: https://getconvertible.app/terms.html

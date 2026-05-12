@@ -7,7 +7,7 @@
 <!-- Primary SEO -->
 <title>Convertible: The Mac File Converter That Respects Your Privacy</title>
 <meta name="description" content="Convert images, video, audio, and PDFs on your Mac without uploading anything. MKV to MOV, HEIC to JPG, MP4 to GIF. All local, all private. One-time $9.99 purchase." />
-<meta name="keywords" content="mac file converter, convert mkv to mov mac, convert heic to jpg mac, compress pdf mac, webm to mp4 mac, mac video converter, permute alternative, handbrake alternative mac" />
+<meta name="keywords" content="mac file converter, file converter mac, convert mkv to mp4 mac, convert mkv to mov mac, convert heic to jpg mac, compress pdf mac, webm to mp4 mac, mac video converter, offline file converter, privacy file converter, macos file converter, convert video mac, convert audio mac, extract audio from video mac, permute alternative, handbrake alternative mac" />
 <meta name="author" content="Convertible" />
 <link rel="canonical" href="https://getconvertible.app" />
 
@@ -31,21 +31,127 @@
 <link rel="icon" type="image/png" href="/assets/images/convertible-logo.png" />
 <link rel="apple-touch-icon" href="/assets/images/convertible-logo.png" />
 
-<!-- Structured Data -->
+<!-- LLM-readable site summary -->
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-readable site summary" />
+
+<!-- Structured Data: SoftwareApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Convertible",
-  "operatingSystem": "macOS 14+",
+  "alternateName": "Convertible for Mac",
+  "description": "Privacy-first macOS file converter for images, video, audio, and PDF. All conversions happen locally on your Mac. Free image conversions, Pro upgrade $9.99 one-time for unlimited video, audio, and PDF.",
+  "operatingSystem": "macOS 14 Sonoma or later",
   "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "File Converter",
   "offers": {
     "@type": "Offer",
     "price": "9.99",
-    "priceCurrency": "USD"
+    "priceCurrency": "USD",
+    "description": "Free tier with unlimited image conversions. Pro upgrade $9.99 one-time for unlimited video, audio, and PDF."
   },
-  "description": "Privacy-first file converter for macOS. Convert images, video, audio, and PDFs locally without uploading anything.",
-  "url": "https://getconvertible.app"
+  "url": "https://getconvertible.app",
+  "downloadUrl": "https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12",
+  "installUrl": "https://apps.apple.com/us/app/convertible-file-converter/id6762157665?mt=12",
+  "screenshot": "https://getconvertible.app/assets/images/og-image.png",
+  "softwareVersion": "1.0",
+  "author": {
+    "@type": "Person",
+    "name": "Francisco Alvarez",
+    "url": "https://getconvertible.app"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Francisco Alvarez"
+  },
+  "featureList": [
+    "Convert images: PNG, JPG, HEIC, WebP, TIFF, BMP, GIF",
+    "Convert video: MP4, MOV, MKV, WebM, M4V",
+    "Convert audio: MP3, AAC, M4A, WAV, FLAC, OGG",
+    "Extract audio from video",
+    "PDF compression and conversion",
+    "Fit-to-target-size presets for Discord, iMessage, WhatsApp, and Email",
+    "100% local processing, files never leave your Mac",
+    "Hardware-accelerated video conversion via Apple VideoToolbox",
+    "Dark mode and light mode",
+    "One-time purchase, no subscription"
+  ],
+  "keywords": "file converter mac, convert heic to jpg mac, mkv to mp4 mac, offline file converter, privacy file converter, macos file converter, convert video mac, extract audio mac"
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What file formats does Convertible support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convertible supports images (PNG, JPG, HEIC, WebP, TIFF, BMP, GIF), video (MP4, MOV, MKV, WebM, M4V), audio (MP3, AAC, M4A, WAV, FLAC, OGG), and PDF. Image conversions are free and unlimited. Video, audio, and PDF conversions require the Pro upgrade, a one-time $9.99 purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Convertible upload my files to the cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Convertible processes every file locally on your Mac. No files are ever uploaded to any server. The only network call the app makes is to Apple StoreKit when you purchase Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Convertible free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convertible offers unlimited free image conversions and compression presets. Video, audio, and PDF conversions are available with the Pro upgrade for a one-time payment of $9.99. There is no subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert HEIC to JPG on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open Convertible, drag and drop your HEIC file, select JPG as the output format, and click Convert. The conversion happens on-device in seconds. No upload, no account required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Convertible convert MKV to MP4 on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Convertible converts MKV to MP4 or MOV using Apple VideoToolbox for hardware acceleration. When the source uses H.264 or H.265, it can remux without re-encoding, so the conversion is near-instant and lossless. This is a Pro feature."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I extract audio from a video file on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Convertible extracts the audio track from any supported video and exports it as MP3, AAC, M4A, WAV, FLAC, or OGG. Everything runs on your Mac, which makes it well-suited for transcription workflows with local tools like MacWhisper."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Convertible work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Convertible works 100% offline. No internet connection is required for any file conversion. The only network call the app ever makes is to Apple's App Store when you purchase Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What macOS version do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convertible requires macOS 14 Sonoma or later. It runs natively on both Apple Silicon and Intel Macs."
+      }
+    }
+  ]
 }
 </script>
 
@@ -1338,12 +1444,68 @@
     
     <div class="faq-list">
       <details class="faq-item" open>
+        <summary class="faq-q">What file formats does Convertible support?</summary>
+        <div class="faq-a">
+          Convertible supports images (PNG, JPG, HEIC, WebP, TIFF, BMP, GIF), video (MP4, MOV, MKV, WebM, M4V), audio (MP3, AAC, M4A, WAV, FLAC, OGG), and PDF. Image conversions are free and unlimited. Video, audio, and PDF conversions require the Pro upgrade, a one-time $9.99 purchase.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is Convertible free?</summary>
+        <div class="faq-a">
+          Convertible offers unlimited free image conversions and compression presets. Video, audio, and PDF conversions are available with the Pro upgrade for a one-time payment of $9.99. There is no subscription.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does Convertible upload my files to the cloud?</summary>
+        <div class="faq-a">
+          No. Convertible processes every file locally on your Mac. No files are ever uploaded to any server. The only network call the app makes is to Apple StoreKit when you purchase Pro.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How do I convert HEIC to JPG on Mac?</summary>
+        <div class="faq-a">
+          Open Convertible, drag and drop your HEIC file, select JPG as the output format, and click Convert. The conversion happens on-device in seconds. No upload, no account required. For a longer walkthrough, see the <a href="/convert-heic-to-jpg-mac.html">HEIC to JPG guide</a>.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can Convertible convert MKV to MP4 on Mac?</summary>
+        <div class="faq-a">
+          Yes. Convertible converts MKV to MP4 or MOV using Apple VideoToolbox for hardware acceleration. When the source uses H.264 or H.265, it can remux without re-encoding, so the conversion is near-instant and lossless. This is a Pro feature. See the <a href="/convert-mkv-to-mp4-mac.html">MKV to MP4 guide</a> for details.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I extract audio from a video file on Mac?</summary>
+        <div class="faq-a">
+          Yes. Convertible extracts the audio track from any supported video and exports it as MP3, AAC, M4A, WAV, FLAC, or OGG. Everything runs on your Mac, which makes it well-suited for transcription workflows with local tools like MacWhisper.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does Convertible work offline?</summary>
+        <div class="faq-a">
+          Yes. Convertible works 100% offline. No internet connection is required for any file conversion. The only network call the app ever makes is to Apple's App Store when you purchase Pro.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What macOS version do I need?</summary>
+        <div class="faq-a">
+          Convertible requires macOS 14 Sonoma or later. It runs natively on both Apple Silicon and Intel Macs.
+        </div>
+      </details>
+
+      <details class="faq-item">
         <summary class="faq-q">How is this different from macOS Quick Actions?</summary>
         <div class="faq-a">
           macOS has a built-in "Convert Image" Quick Action, but it only handles PNG, JPG, and HEIC. Convertible covers a lot more: video (MKV, WebM, MP4, MOV), audio (MP3, FLAC, etc.), PDF compression, fit-to-target size presets, and batch processing. Once App Intents land, you'll also be able to wrap any Convertible conversion as your own Quick Action, so the formats Apple skipped end up one right-click away too.
         </div>
       </details>
-      
+
       <details class="faq-item">
         <summary class="faq-q">Can I trigger conversions from outside the app?</summary>
         <div class="faq-a">
@@ -1357,42 +1519,21 @@
           Yes. $9.99 once, yours forever. You'll get free updates to version 1.x, including bug fixes, new features, and format additions. No subscription, no hidden paywalls. If we ever release a major new version like 2.0 down the road, existing customers will get a generous upgrade discount.
         </div>
       </details>
-      
+
       <details class="faq-item">
-        <summary class="faq-q">What's the difference between the free tier and Pro?</summary>
+        <summary class="faq-q">What's in the free tier vs Pro?</summary>
         <div class="faq-a">
           The free tier includes unlimited image conversions and all compression presets, forever, no expiry. Batch conversion (dragging multiple files at once) is Pro-only. Pro unlocks unlimited video, audio, and PDF conversions. Free users get 3 video/audio conversions and 5 PDF conversions per month as a taste.
         </div>
       </details>
-      
-      <details class="faq-item">
-        <summary class="faq-q">Can I really convert MKV files?</summary>
-        <div class="faq-a">
-          Yes. macOS can't open MKV natively (QuickTime, iMovie, Final Cut don't support it). Convertible converts MKV to MOV or MP4 instantly when the video inside uses common codecs like H.264 or H.265, with zero quality loss.
-        </div>
-      </details>
-      
-      <details class="faq-item">
-        <summary class="faq-q">Does it work offline?</summary>
-        <div class="faq-a">
-          Completely. The only network call Convertible ever makes is when you purchase through Apple's App Store. After that, disconnect your Mac from the internet and everything still works.
-        </div>
-      </details>
-      
-      <details class="faq-item">
-        <summary class="faq-q">What macOS versions are supported?</summary>
-        <div class="faq-a">
-          Convertible requires macOS 14 (Sonoma) or later. It runs natively on both Apple Silicon and Intel Macs.
-        </div>
-      </details>
-      
+
       <details class="faq-item">
         <summary class="faq-q">Can I request a new format?</summary>
         <div class="faq-a">
           Absolutely. Email <a href="mailto:hello@getconvertible.app">hello@getconvertible.app</a> with your use case. New formats added to version 1.x are included in your purchase.
         </div>
       </details>
-      
+
       <details class="faq-item">
         <summary class="faq-q">Is my data sold or tracked?</summary>
         <div class="faq-a">
